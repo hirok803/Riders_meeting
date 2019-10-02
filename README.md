@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-ruby 2.6.4
+ruby 2.6.3
 * System dependencies
 bundler-2.0.2 updated
 * Configuration
