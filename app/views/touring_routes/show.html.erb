@@ -98,7 +98,7 @@
         </p>
       <% end %>
     </div>
-    <div id="map" style=" width: 600px; height: 500px">
+    <div id="map_show" style=" width: 600px; height: 500px">
     </div>
 </div>
 
@@ -117,13 +117,13 @@
   $(function(){
     setTimeout(function(){
         //マップの初期化表示
-       initMap(res)
+       initMap_d(res)
     },50);
 });
 
 })()
 
-function initMap(routes) {
+function initMap_d(routes) {
     // ルート検索の条件
 
     let way_points = []
@@ -152,7 +152,7 @@ function initMap(routes) {
     let view_center_lon = (routes.data.start_lon + routes.data.end_lon) / 2
 
     // マップの生成
-    var map = new google.maps.Map(document.getElementById("map"), {
+    var map = new google.maps.Map(document.getElementById("map_show"), {
         center: new google.maps.LatLng(view_center_lat,view_center_lon), // マップの中心
         zoom: 9, // ズームレベル
         styles:
@@ -182,4 +182,3 @@ function initMap(routes) {
     });
 }
 </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY']%>" async defer></script>
