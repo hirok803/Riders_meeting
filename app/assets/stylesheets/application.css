@@ -99,3 +99,6 @@ header li{
 header li :hover{
   background-color:rgba(192,192, 192, 1.0);
 }
+.avatar img{
+  width: 32px;
+}
