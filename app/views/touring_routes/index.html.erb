@@ -10,8 +10,7 @@
       <th>Start date</th>
       <th>End date</th>
 
-      <th>Created at</th>
-      <th>Updated at</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,9 +22,6 @@
         <td><%= touring_route.touring_desc %></td>
         <td><%= touring_route.start_date %></td>
         <td><%= touring_route.end_date %></td>
-
-        <td><%= touring_route.created_at %></td>
-        <td><%= touring_route.updated_at %></td>
         <td><%= link_to 'Show', touring_route %></td>
         <td><%= link_to 'Edit', edit_touring_route_path(touring_route) %></td>
         <td><%= link_to 'Destroy', touring_route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
