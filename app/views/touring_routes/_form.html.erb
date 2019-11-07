@@ -31,12 +31,12 @@
 
   <div class="field">
     <%= form.label :start_date %>
-    <%= form.datetime_select :start_date %>
+    <%= form.date_select :start_date, use_month_numbers: true %>
   </div>
 
   <div class="field">
     <%= form.label :end_date %>
-    <%= form.datetime_select :end_date %>
+    <%= form.datetime_field :end_date %>
   </div>
 
 
