@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 2019_10_18_064543) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "riders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "rider_name"
-    t.string "email"
-    t.string "bike_name"
-    t.string "icon_file_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "touring_routes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "touring_name"
     t.text "touring_desc"
