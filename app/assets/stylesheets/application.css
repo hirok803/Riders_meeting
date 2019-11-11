@@ -19,7 +19,13 @@
 html{
 	font-size: 62.5%; /* 16px X 62.5% = 10PX */
 }
-body{
+
+
+main{
+margin: 0 0 0 0 0;
+}
+
+body{ 
 	/* color:#333; */
 	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
 	font-size: 1.6rem;
@@ -29,13 +35,9 @@ body{
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
    margin: 0px;
-  background-image: url("/rider.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
+
 }
-main{
-margin: 100px 40px 0 40px;
-}
+
 h1{
   font-size: 2.4rem;
 }
@@ -65,40 +67,72 @@ input{
   margin-top: 1.2rem;
 }
 
- header{
-  height: 80px;
-  width: 100%;
-  background-color:#C0C0C0;
-  position: fixed;
-  padding: 1px;
-  top: 0;
-  z-index: 99;
- }
-
-header p{
-  line-height: 80px;
-  float: left;
-  font-size: 40px;
-  font-weight: bold;
-  margin-left: 40px;
-  margin-top: 0px;
-}
-
-header nav{
-  float:right;
-  margin-right: 100px;
-}
-
-header li{
-  float: right;
-  margin-right: 40px;
-  margin-top: 10px;
-  list-style: none;
-}
-
-header li :hover{
-  background-color:rgba(192,192, 192, 1.0);
-}
 .avatar img{
   width: 32px;
+}
+
+.map{
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -99;
+}
+
+@media screen and (min-width: 768px) {
+  main{
+  margin: 100px 40px 0 40px;
+  }
+
+  body{
+    background-image: url("/rider.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+  }
+  header{
+    height: 80px;
+    width: 100%;
+    background-color:#C0C0C0;
+    position: fixed;
+    padding: 1px;
+    top: 0;
+    z-index: 99;
+  }
+
+  header p{
+    line-height: 80px;
+    float: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-top: 0px;
+  }
+
+  header nav{
+    float:right;
+    margin-right: 100px;
+  }
+
+  header li{
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    list-style: none;
+  }
+
+  header li :hover{
+    background-color:rgba(192,192, 192, 1.0);
+  }
+  .touring_new,.touring_show {
+    display: flex;
+    justify-content: space-between;
+  }
+  .map{
+    position: static;
+    width: 600px; 
+    height: 500px;
+    z-index: 0;
+}
+
 }
