@@ -67,6 +67,9 @@ input{
   margin-top: 1.2rem;
 }
 
+.header_title{
+  display: none;
+}
 .avatar img{
   width: 32px;
 }
@@ -122,8 +125,12 @@ input{
   }
 
   header li :hover{
-    background-color:rgba(192,192, 192, 1.0);
+    background-color:rgba(192,192,192, 1.0);
   }
+
+  .header_title{
+  display: block;
+}
   .touring_new,.touring_show {
     display: flex;
     justify-content: space-between;
