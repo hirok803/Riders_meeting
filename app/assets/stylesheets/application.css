@@ -67,6 +67,17 @@ input{
   margin-top: 1.2rem;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    background-color:#007FEB;
+    position: fixed;
+    padding: 1px;
+    top: 0;
+    z-index: 99;
+  }
 .header_title{
   display: none;
 }
@@ -82,6 +93,8 @@ input{
   left:0;
   z-index: -99;
 }
+
+
 
 @media screen and (min-width: 768px) {
   main{
