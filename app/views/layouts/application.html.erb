@@ -36,20 +36,20 @@
           deviseにより自動で作成されてますので、rake routesで確認できます -->
           <!-- Logged in as <strong><%= current_user.email %></strong> --> 
           <!-- <%= link_to 'ログアウト', destroy_user_session_path,method: :delete %> -->
-          <ul class="flex">
+          <ul>
             <li>
               <%= link_to edit_user_registration_path do %> 
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user fa-3x"></i>
               <% end %>
             </li>
             <li>
               <%= link_to touring_routes_path do %>
-                <i class="fas fa-list-ul"></i>
+                <i class="fas fa-list-ul fa-3x"></i>
               <% end %>
             </li>
             <li>
               <%= link_to new_touring_route_path do %>
-                <i class="fas fa-map-marked-alt"></i>
+                <i class="fas fa-map-marked-alt fa-3x"></i>
               <% end %>
             </li>
           </ul>
