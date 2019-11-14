@@ -54,7 +54,9 @@
               <% end %>
             </li>            
             <li>
+              <%= link_to destroy_user_session_path,method: :delete do %>
                 <i class="fas fa-cog fa-2x"></i>
+              <% end %>
             </li>  
           </ul>
         <% else %>
