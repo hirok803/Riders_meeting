@@ -2,7 +2,7 @@
 <div class="touring_show">
     <div>
       <p>
-        <strong>User email:</strong>
+        <strong>User:</strong>
         <%= @touring_route.user.name %>
       </p>
       <p>
@@ -12,7 +12,7 @@
 
       <p>
         <strong>Start date:</strong>
-        <%= @touring_route.start_date %>
+        <%= @touring_route.start_date.strftime('%Y/%m/%d') %>
       </p>
 
       <p>
