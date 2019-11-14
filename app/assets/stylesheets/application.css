@@ -74,15 +74,15 @@ header{
   }
 nav {
   width: 100%;
-  position: relative;
-}
-nav ul {
-  padding: 16px;
-  display: flex;
-  justify-content: space-around;
   position: absolute;
   top:50%;
   transform: translateY(-50%);
+}
+nav ul {
+  /* padding: 16px; */
+  display: flex;
+  justify-content: space-around;
+
 }
 nav ul i{
   color:#000;
@@ -121,22 +121,23 @@ nav ul i{
     height: 80px;
     width: 100%;
     background-color:#C0C0C0;
-    position: fixed;
     top: 0;
     z-index: 99;
   }
 
   header p{
     line-height: 80px;
-    float: left;
     font-size: 40px;
     font-weight: bold;
     margin-left: 40px;
-    margin-top: 0px;
   }
 
   .header_title{
   display: block;
+  }
+nav {
+  width: 50%;
+  right:0 ;
 }
   .touring_new,.touring_show {
     display: flex;
