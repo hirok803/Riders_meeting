@@ -33,14 +33,6 @@
                           PATCH  /touring_routes/:id(.:format)                                                            touring_routes#update
                           PUT    /touring_routes/:id(.:format)                                                            touring_routes#update
                           DELETE /touring_routes/:id(.:format)                                                            touring_routes#destroy
-                   riders GET    /riders(.:format)                                                                        riders#index
-                          POST   /riders(.:format)                                                                        riders#create
-                new_rider GET    /riders/new(.:format)                                                                    riders#new
-               edit_rider GET    /riders/:id/edit(.:format)                                                               riders#edit
-                    rider GET    /riders/:id(.:format)                                                                    riders#show
-                          PATCH  /riders/:id(.:format)                                                                    riders#update
-                          PUT    /riders/:id(.:format)                                                                    riders#update
-                          DELETE /riders/:id(.:format)                                                                    riders#destroy
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show

@@ -19,7 +19,13 @@
 html{
 	font-size: 62.5%; /* 16px X 62.5% = 10PX */
 }
-body{
+
+
+main{
+margin: 0 0 0 0 0;
+}
+
+body{ 
 	/* color:#333; */
 	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
 	font-size: 1.6rem;
@@ -28,24 +34,16 @@ body{
 	line-height:1.85;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   margin: 0px;
-  background-image: url("/rider.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
+
 }
-main{
-margin: 100px 40px 0 40px;
-}
+
 h1{
   font-size: 2.4rem;
 }
 p{
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
-ul{
-  list-style: none;
-  padding-inline-start: 0;
-}
+
 label{
   padding-right: 10px;
 }
@@ -65,40 +63,93 @@ input{
   margin-top: 1.2rem;
 }
 
- header{
-  height: 80px;
+header{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    background-color:#007FEB;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+  }
+nav {
   width: 100%;
-  background-color:#C0C0C0;
-  position: fixed;
-  padding: 1px;
-  top: 0;
-  z-index: 99;
- }
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+nav ul {
+  /* padding: 16px; */
+  display: flex;
+  justify-content: space-around;
 
-header p{
-  line-height: 80px;
-  float: left;
-  font-size: 40px;
-  font-weight: bold;
-  margin-left: 40px;
-  margin-top: 0px;
+}
+nav ul i{
+  color:#000;
 }
 
-header nav{
-  float:right;
-  margin-right: 100px;
-}
 
-header li{
-  float: right;
-  margin-right: 40px;
-  margin-top: 10px;
-  list-style: none;
-}
-
-header li :hover{
-  background-color:rgba(192,192, 192, 1.0);
+.header_title{
+  display: none;
 }
 .avatar img{
   width: 32px;
+}
+
+.map{
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -99;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  main{
+  margin: 80px 40px 0 40px;
+  }
+
+  body{
+    background-image: url("/rider.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+  }
+  header{
+    height: 80px;
+    width: 100%;
+    background-color:#C0C0C0;
+    top: 0;
+    z-index: 99;
+  }
+
+  header p{
+    line-height: 80px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 40px;
+  }
+
+  .header_title{
+  display: block;
+  }
+nav {
+  width: 50%;
+  right:0 ;
+}
+  .touring_new,.touring_show {
+    display: flex;
+    justify-content: space-between;
+  }
+  .map{
+    position: static;
+    width: 600px; 
+    height: 500px;
+    z-index: 0;
+}
+th,td {
+  padding: 10px;
+}
 }
