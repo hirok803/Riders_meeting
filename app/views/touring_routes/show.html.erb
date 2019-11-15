@@ -81,14 +81,24 @@
             </p>
         </div>
 
-        <%= render 'comments/form', comment: @comment %>
-         <% @touring_route.comments.each do |comment| %>
-        <p>
-          <%= current_user.name %>
-          <%= comment.comment %>
-        </p>
+    <div>
+      <% @comments.each do |comment| %>
+        <div>
+          <strong><%= comment.user.name %></strong>
+          <br />
+          <p><%= comment.comment %></p>
+          <% if user_signed_in? && comment.user == current_user %>
+            <p><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= render 'comments/form' , comment: @comment %>
       <% end %>
     </div>
+
+    </div>
+
     <div class="map" id="map_show" >
     </div>
 </div>
