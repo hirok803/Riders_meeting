@@ -121,7 +121,8 @@ nav ul i{
   }
   header{
     display: flex;
-    height: 80px;
+    justify-content: space-between;
+    height: 6rem;
     width: 100%;
     background-color:#C0C0C0;
     top: 0;
@@ -129,8 +130,8 @@ nav ul i{
   }
 
   header p{
-    line-height: 80px;
-    font-size: 40px;
+    line-height: 6rem;
+    font-size: 3.6rem;
     font-weight: bold;
     margin-left: 40px;
   }

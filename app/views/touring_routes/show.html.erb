@@ -1,81 +1,82 @@
 <h1>Touring Route</h1>
 <div class="touring_show">
-    <div>
-      <p>
-        <strong>User:</strong>
-        <%= @touring_route.user.name %>
-      </p>
-      <p>
-        <strong>Touring desc:</strong>
-        <%= @touring_route.touring_desc %>
-      </p>
+  <div>
+      <div>
+          <p>
+            <strong>User:</strong>
+            <%= @touring_route.user.name %>
+          </p>
+          <p>
+            <strong>Touring desc:</strong>
+            <%= @touring_route.touring_desc %>
+          </p>
 
-      <p>
-        <strong>Start date:</strong>
-        <%= @touring_route.start_date.strftime('%Y/%m/%d') %>
-      </p>
+          <p>
+            <strong>Start date:</strong>
+            <%= @touring_route.start_date.strftime('%Y/%m/%d') %>
+          </p>
 
-      <p>
-        <strong>End date:</strong>
-        <%= @touring_route.end_date %>
-      </p>
+          <p>
+            <strong>End date:</strong>
+            <%= @touring_route.end_date %>
+          </p>
+      </div> 
+      <div>
+        <% @comments.each do |comment| %>
+          <div>
+            <% if comment.user == current_user%>
+                <!–左からの吹き出し–>
+                <div class="kaiwa">
+                    <figure class="kaiwa-img-right">
+                      <%# <img src="画像のURL" alt="no-img2″> %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
 
-      <% @comments.each do |comment| %>
+                    <figcaption class="kaiwa-img-description">
+                    <%# /////////名前//////////// %>
+                    <strong><%= comment.user.name %></strong>
+
+                    </figcaption>
+                    </figure>
+                    <div class="kaiwa-text-left">
+                      <p class="kaiwa-text">
+                        <%# /////////チャットの内容//////////// %>
+                        <%= comment.comment %>
+                      </p>
+                    </div>
+                </div>
+
+            <% else %>
+                <!–左からの吹き出し–>
+                <div class="kaiwa">
+                    <figure class="kaiwa-img-left">
+                      <%# <img src="画像のURL" alt="no-img2″> %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
+
+                    <figcaption class="kaiwa-img-description">
+                    <%# /////////名前//////////// %>
+                    <strong><%= comment.user.name %></strong>
+
+                    </figcaption>
+                    </figure>
+                    <div class="kaiwa-text-right">
+                      <p class="kaiwa-text">
+                        <%# /////////チャットの内容//////////// %>
+                        <%= comment.comment %>
+                      </p>
+                    </div>
+                </div>
+            <% end %> 
+          </div>
+        <% end %> 
         <div>
-          <% if comment.user == current_user%>
-              <!–左からの吹き出し–>
-              <div class="kaiwa">
-                  <figure class="kaiwa-img-right">
-                    <%# <img src="画像のURL" alt="no-img2″> %>
-                  <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
-
-                  <figcaption class="kaiwa-img-description">
-                  <%# /////////名前//////////// %>
-                  <strong><%= comment.user.name %></strong>
-
-                  </figcaption>
-                  </figure>
-                  <div class="kaiwa-text-left">
-                    <p class="kaiwa-text">
-                      <%# /////////チャットの内容//////////// %>
-                      <%= comment.comment %>
-                    </p>
-                  </div>
-              </div>
-
-          <% else %>
-              <!–左からの吹き出し–>
-              <div class="kaiwa">
-                  <figure class="kaiwa-img-left">
-                    <%# <img src="画像のURL" alt="no-img2″> %>
-                  <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
-
-                  <figcaption class="kaiwa-img-description">
-                  <%# /////////名前//////////// %>
-                  <strong><%= comment.user.name %></strong>
-
-                  </figcaption>
-                  </figure>
-                  <div class="kaiwa-text-right">
-                    <p class="kaiwa-text">
-                      <%# /////////チャットの内容//////////// %>
-                      <%= comment.comment %>
-                    </p>
-                  </div>
-              </div>
-          <% end %> 
+          <% if user_signed_in? %>
+            <%= render 'comments/form' , comment: @comment %>
+          <% end %>
         </div>
-      <% end %> 
-
-      <% if user_signed_in? %>
-        <%= render 'comments/form' , comment: @comment %>
-      <% end %>
-    </div>
-
-    </div>
-
-    <div class="map" id="map_show" >
-    </div>
+      </div>
+  </div>
+  <div class="map" id="map_show" >
+  </div>
 </div>
 
 <%
