@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.text_area :comment %>
+  <div class="comment_form">
+    <div class="field">
+      <%= form.text_area :comment %>
+    </div>
+    <div class="actions">
+      <%= form.submit ">"%>
+    </div>
   </div>
     <%= form.hidden_field :user_id %>
     <%= form.hidden_field :touring_route_id %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
