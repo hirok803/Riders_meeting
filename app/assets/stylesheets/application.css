@@ -94,8 +94,12 @@ nav ul i{
 .header_title{
   display: none;
 }
-.avatar img{
+
+.user img{
   width: 32px;
+  height: 32px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
 }
 
 .map{

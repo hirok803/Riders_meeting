@@ -1,35 +1,29 @@
-<h1>Touring Route</h1>
+<%# <h1>Touring Route</h1> %>
 <div class="touring_show">
   <div>
-      <div>
-          <p>
-            <strong>User:</strong>
-            <%= @touring_route.user.name %>
-          </p>
-          <p>
-            <strong>Touring desc:</strong>
-            <%= @touring_route.touring_desc %>
-          </p>
-
-          <p>
-            <strong>Start date:</strong>
-            <%= @touring_route.start_date.strftime('%Y/%m/%d') %>
-          </p>
-
-          <p>
-            <strong>End date:</strong>
-            <%= @touring_route.end_date %>
-          </p>
-      </div> 
-      <div>
+      <ul class="route_detail">
+        <li class="user">
+          <%= image_tag(@touring_route.user.avatar_url, width: 32, height:32) if @touring_route.user.avatar.present? %>
+          <span><%= @touring_route.user.name %> </span>   
+        </li>
+        <li>
+          <%= image_tag 'icon_desc.svg', width:32 %>
+          <span><%= @touring_route.touring_desc %></span>
+        </li>
+        <li>
+          <%= image_tag 'icon_calender.svg', width:32 %>
+          <span><%= @touring_route.start_date.strftime('%Y/%m/%d') %></span>
+        </li>
+      </ul>
+      <div class="route_comennt">
         <% @comments.each do |comment| %>
-          <div>
+          <div class="route_comment_body">
             <% if comment.user == current_user%>
                 <!–左からの吹き出し–>
                 <div class="kaiwa">
                     <figure class="kaiwa-img-right">
                       <%# <img src="画像のURL" alt="no-img2″> %>
-                    <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if comment.user.avatar.present? %>
 
                     <figcaption class="kaiwa-img-description">
                     <%# /////////名前//////////// %>
@@ -50,7 +44,7 @@
                 <div class="kaiwa">
                     <figure class="kaiwa-img-left">
                       <%# <img src="画像のURL" alt="no-img2″> %>
-                    <%= image_tag(comment.user.avatar_url, width: 32) if current_user.avatar.present? %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if comment.user.avatar.present? %>
 
                     <figcaption class="kaiwa-img-description">
                     <%# /////////名前//////////// %>
@@ -68,7 +62,7 @@
             <% end %> 
           </div>
         <% end %> 
-        <div>
+        <div class="route_comment_form">
           <% if user_signed_in? %>
             <%= render 'comments/form' , comment: @comment %>
           <% end %>
@@ -190,7 +184,7 @@ function initMap_d(routes) {
               map : map,             // 対象の地図オブジェクト
               position : pos,   // 緯度・経度
               icon: {
-                url: '/icon_bike.png',                      //アイコンのURL
+                url: '/icon_bike.svg',                      //アイコンのURL
                 scaledSize: new google.maps.Size(40, 40) //サイズ
                 }
             });
