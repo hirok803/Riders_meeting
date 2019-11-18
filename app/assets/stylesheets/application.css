@@ -111,6 +111,19 @@ nav ul i{
   z-index: -99;
 }
 
+.route_detail{
+  width:100%;
+  padding: 16px;
+  position: fixed;
+  bottom: 80px;
+}
+.route_detail li{
+  padding: 16px;
+}
+.route_detail span{
+  padding-left: 8px;
+}
+
 
 
 @media screen and (min-width: 768px) {

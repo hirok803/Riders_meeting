@@ -15,9 +15,9 @@
           <span><%= @touring_route.start_date.strftime('%Y/%m/%d') %></span>
         </li>
       </ul>
-      <div class="route_comennt">
-        <% @comments.each do |comment| %>
-          <div class="route_comment_body">
+      <div class="route_comment">
+        <div class="route_comment_body">
+          <% @comments.each do |comment| %>
             <% if comment.user == current_user%>
                 <!–左からの吹き出し–>
                 <div class="kaiwa">
@@ -60,12 +60,12 @@
                     </div>
                 </div>
             <% end %> 
-          </div>
-        <% end %> 
-        <div class="route_comment_form">
-          <% if user_signed_in? %>
-            <%= render 'comments/form' , comment: @comment %>
           <% end %>
+        </div> 
+        <div class="route_comment_form">
+            <% if user_signed_in? %>
+              <%= render 'comments/form' , comment: @comment %>
+            <% end %>
         </div>
       </div>
   </div>
