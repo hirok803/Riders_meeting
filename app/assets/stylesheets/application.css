@@ -24,7 +24,7 @@ html{
 
 
 main{
-margin: 0 0 0 0 0;
+margin: 24px;
 }
 
 body{ 
@@ -113,16 +113,15 @@ nav ul i{
   z-index: -99;
 }
 
-.route_detail{
+.touring_show_detail,.touring_new_form{
   width:100%;
-  padding: 16px;
   position: fixed;
   bottom: 80px;
 }
-.route_detail li{
+.touring_show_detail li{
   padding: 16px;
 }
-.route_detail span{
+.touring_show_detail span{
   padding-left: 8px;
 }
 
@@ -183,9 +182,8 @@ nav ul i{
     justify-content: space-between;
   }
 
-  .route_detail{
+  .touring_show_detail,.touring_new_form{
     width: auto;
-    padding: 0;
     position: static;
   }
   .message{
