@@ -1,12 +1,13 @@
-<h1>New Touring Route</h1>
+<%# <h1>New Touring Route</h1> %>
 
 <div class="touring_new">
   <%= render 'form', touring_route: @touring_route %>
   <div class="map" id="map_new" >
   </div>
 </div>
-<%= link_to 'Back', touring_routes_path %>
-
+<div class="none">
+  <%= link_to 'Back', touring_routes_path %>
+</div>
 <script>
   initMap();
     function initMap() {

@@ -140,7 +140,9 @@ nav ul i{
   appearance: none;
   font-size: 1.6rem;
 }
-
+  .message{
+    display: none;
+  }
 
 @media screen and (min-width: 768px) {
   main{
@@ -186,7 +188,9 @@ nav ul i{
     padding: 0;
     position: static;
   }
-
+  .message{
+    display: block;
+  }
 
   .map{ 
     position: static;
