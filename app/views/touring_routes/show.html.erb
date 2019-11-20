@@ -16,13 +16,13 @@
         </li>
       </ul>
 <%# コメント入力欄をドロワーとして出し入れ %>
-      <div class="route_comment" id="comment_drawer">
+      <div class="touring_show_comment" id="comment_drawer">
         <input id="comment-input" type="checkbox" class="comment-unshown">
         <label id="comment-open" for="comment-input"><span></span></label>
         <label class="comment-unshown" id="comment-close" for="comment-input"></label>
        
         <div id="comment-content">
-        <div class="route_comment_body">
+        <div class="touring_show_comment_body">
           <% @comments.each do |comment| %>
             <% if comment.user == current_user%>
                 <!–左からの吹き出し–>
@@ -68,7 +68,7 @@
             <% end %> 
           <% end %>
         </div> 
-        <div>
+        <div class="touring_show_comment_form">
             <% if user_signed_in? %>
               <%= render 'comments/form' , comment: @comment %>
             <% end %>
