@@ -48,10 +48,6 @@ label{
 }
 input{
   margin: 0 10px;
-  /* background-color: transparent; */
-  border: none;
-  cursor: pointer;
-  outline: none;
   padding: 0;
   appearance: none;
   font-size: 1.6rem;
@@ -119,6 +115,8 @@ nav ul i{
   position: fixed;
   bottom: 72px;
   padding: 8px;
+  background-color: rgba(255,255,255,0.6);
+
 }
 .touring_new_form,.comment_form{
   width:100%;
@@ -130,7 +128,6 @@ nav ul i{
 }
 .touring_show_detail span{
   padding: 8px;
-  background-color: rgba(255,255,255,0.4);
   font-weight: bold;
 }
 
@@ -144,6 +141,9 @@ nav ul i{
 
 .touring_new_form_detail li{
   padding: 16px;
+  width: 250px;
+  margin: 0 auto;
+  display: block;
 }
 
 .touring_new_form_latlng li{
@@ -160,12 +160,37 @@ nav ul i{
   display: flex;
   align-items: center;
 }
+.touring_new_form_submit{
+  padding: 16px;
+}
+.touring_new_form_submit input[type="submit"] {
+	border-style: none;
+	width: 160px;
+	height: 48px;
+  margin: 0 auto ;
+	border: 1px solid #007FEB;
+	display: block;
+	border-radius: 24px;
+  font-size: 1.8rem;
+  background-color: #007FEB;
+  color: #fff;
+  line-height: 48px;
+}
 
 .message{
   display: none;
 }
 
 @media screen and (min-width: 768px) {
+
+  input{
+ 
+  padding: 0;
+  appearance: normal;
+}
+  textarea{
+  appearance: normal;
+}
   main{
   margin: 80px 40px 0 40px;
   }
