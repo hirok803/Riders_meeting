@@ -14,7 +14,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY']%>" async defer></script>
   </head>
 
@@ -32,47 +31,11 @@
           deviseにより自動で作成されてますので、rake routesで確認できます -->
           <!-- Logged in as <strong><%= current_user.email %></strong> --> 
           <!-- <%= link_to 'ログアウト', destroy_user_session_path,method: :delete %> -->
-          <nav>
-            <ul>
-              <li>
-                <%= link_to new_touring_route_path do %>
-                  <i class="fas fa-map-marked-alt fa-2x"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to touring_routes_path do %>
-                  <i class="fas fa-list-ul fa-2x"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to touring_routes_path do %>
-                  <i class="fas fa-archive fa-2x"></i>
-                <% end %>
-              </li>            
-              <li>
-                <%= link_to edit_user_registration_path do %> 
-                  <i class="fas fa-user fa-2x"></i>
-                <% end %>
-              </li>            
-              <li>
-                <%= link_to destroy_user_session_path,method: :delete do %>
-                  <i class="fas fa-cog fa-2x"></i>
-                <% end %>
-              </li>  
-            </ul>
-          </nav>          
+
+          <%= render 'layouts/nav' %>
+
         <% else %>
-          <ul class="start_btn_container"> 
-            <li class="signup_btn">
-               <%= link_to 'サインアップ', new_user_registration_path %> 
-            </li>
-            <li>
-            <span>OR</span>
-            </li>
-            <li class="login_btn" >
-               <%= link_to 'ログイン', new_user_session_path %>          
-            </li>
-          </ul>
+          <%= render 'layouts/start_btn'%>
         <% end %>
     </header>
 
