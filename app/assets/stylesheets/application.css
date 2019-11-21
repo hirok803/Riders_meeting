@@ -147,7 +147,7 @@ nav ul i{
 
 
 
-.user img{
+.user img,.index_user_icon img{
   width: 32px;
   height: 32px;
   border: 1px solid #aaa;
@@ -233,6 +233,23 @@ nav ul i{
   display: none;
 }
 
+.index_body{
+  margin-bottom: 36px;
+}
+
+td{
+  padding: 8px;
+  vertical-align: middle;
+  font-size:1.4rem;
+}
+.index_user_icon{
+  text-align: center; 
+}
+
+
+/* ********************* */
+/* *** For desktop ***** */
+/* ********************* */
 @media screen and (min-width: 768px) {
 
   input{
@@ -259,7 +276,7 @@ nav ul i{
   } 
   
   main{
-  margin: 80px 40px 0 40px;
+  margin: 36px;
   /* color: #fff; */
   }
 
@@ -313,7 +330,5 @@ nav ul i{
     height: 500px;
     z-index: 0;
   }
-  th,td { 
-    padding: 10px;
-  }
+
 }

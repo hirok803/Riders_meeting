@@ -1,37 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Touring Routes</h1>
+<% @touring_routes.each do |touring_route| %>
+    <table class="index_body">
+      <tbody >
+          <tr>
+            <td class="index_user_icon">
+             <%= image_tag(touring_route.user.avatar_url, width: 40) if touring_route.user.avatar.present? %>
+            </td>
+            <td><%= touring_route.user.name %></td>
+           </tr>
+          <tr>
+            <td rowspan="2">
+              <%= image_tag 'img_aso.png' ,width: 100  %>
+            </td>
+            <td><%= touring_route.touring_desc %></td>            
+          </tr>
+           <tr>
+            <td><%= touring_route.start_date.strftime('%Y/%m/%d') %></td>
+          </tr>
 
-<table>
-  <thead>
-    <tr>
-      <th>ICON</th>
-      <th>User </th>
-      <th>Touring name</th>
-      <th>Touring desc</th>
-      <th>Start date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @touring_routes.each do |touring_route| %>
-      <tr>
-        <td>
-        <%= image_tag(touring_route.user.avatar_url, width: 40) if touring_route.user.avatar.present? %>
-        </td>
-        <td><%= touring_route.user.name %></td>
-        <td><%= touring_route.touring_name %></td>
-        <td><%= touring_route.touring_desc %></td>
-        <td><%= touring_route.start_date.strftime('%Y/%m/%d') %></td>
-        <td><%= link_to 'Show', touring_route %></td>
-        <td><%= link_to 'Edit', edit_touring_route_path(touring_route) %></td>
-        <td><%= link_to 'Destroy', touring_route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Touring Route', new_touring_route_path %>
+      </tbody>
+    </table>
+  <% end %>
