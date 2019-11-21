@@ -23,7 +23,6 @@ html{
 }
 
 body{ 
-	/* color:#333; */
 	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
 	font-size: 1.6rem;
 	font-feature-settings: "palt" 1;
@@ -33,23 +32,32 @@ body{
   -moz-osx-font-smoothing: grayscale;
 
 }
+
 main{
   color: #007FEB;
 }
+
 h1{
-  font-size: 2.4rem;
+  font-size: 3.6rem;
+}
+h2{
+  font-size:2.4rem;
 }
 p{
   font-size: 1.6rem;
 }
 
 a:link,a:visited,a:hover,a:active{
-color:#007FEB;
-font-weight: bold;
+  color:#fff;
+  font-weight: bold;
+}
+.start_btn_container a:link,.start_btn_container a:visited,.start_btn_container a:hover,.start_btn_container a:active {
+  color:#007FEB;
 }
 
 label{
   padding-right: 10px;
+  font-weight: bold;;
 }
 input{
   margin: 0 10px;
@@ -228,15 +236,23 @@ nav ul i{
   textarea{
   appearance: normal;
 }
-  main{
-  margin: 80px 40px 0 40px;
+
+  h2{
+    font-weight: bold;
   }
 
   body{
-    /* background-image: url("/rider.jpg"); */
+    /* background-image: url("/img_bg_home_PC.jpg"); */
     background-size: cover;
     background-repeat: no-repeat; 
+  } 
+  
+  main{
+  margin: 80px 40px 0 40px;
+  /* color: #fff; */
   }
+
+
   header{
     display: flex;
     justify-content: space-between;
