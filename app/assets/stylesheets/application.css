@@ -43,6 +43,11 @@ p{
   font-size: 1.6rem;
 }
 
+a:link,a:visited,a:hover,a:active{
+color:#007FEB;
+font-weight: bold;
+}
+
 label{
   padding-right: 10px;
 }
@@ -94,6 +99,38 @@ nav ul i{
 .header_title{
   display: none;
 }
+
+.start_btn_container{
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  top:380px;
+  left:50%;
+  width: 200px;
+  height: 200px;
+  transform:translateX(-50%)
+}
+.start_btn_container li{
+  text-align: center;
+  color: #007FEB;
+}
+.start_btn_container span{
+   font-weight: bold;
+}
+
+.signup_btn a,.login_btn a{
+  display:block;
+  text-align: center;
+  line-height: 5.0rem;
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  border:1px solid #007FEB;
+  margin: 0 auto;
+}
+
+
 
 .user img{
   width: 32px;
