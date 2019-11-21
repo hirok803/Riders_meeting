@@ -77,10 +77,10 @@ textarea{
   display:flex;
 }
 
-header,footer{
-    /* display: flex;
-    align-items: center;
-    height: 10vh; */
+header{
+  display: none;
+}
+footer{
     width: 100%;
     background-color:#007FEB;
     position: fixed;
@@ -236,13 +236,17 @@ nav ul i{
 @media screen and (min-width: 768px) {
 
   input{
- 
   padding: 0;
   appearance: normal;
-}
+  }
   textarea{
   appearance: normal;
-}
+  }
+
+  a:link,a:visited,a:hover,a:active{
+  color:#007FEB;
+  font-weight: bold;
+  }
 
   h2{
     font-weight: bold;
@@ -259,13 +263,15 @@ nav ul i{
   /* color: #fff; */
   }
 
-
+  footer{
+    display: none;
+  }
   header{
     display: flex;
+    background-color:#007FEB;
     justify-content: space-between;
     height: 6rem;
     width: 100%;
-    top: 0;
     z-index: 99;
   }
 
