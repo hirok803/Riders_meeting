@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="index_body">
 <% @touring_routes.each do |touring_route| %>
-    <table class="index_body">
+    <table class="index_list">
       <tbody >
           <tr>
             <td class="index_user_icon">
@@ -9,16 +9,20 @@
             </td>
             <td><%= touring_route.user.name %></td>
            </tr>
-          <tr>
-            <td rowspan="2">
-              <%= image_tag 'img_aso.png' ,width: 100  %>
-            </td>
-            <td><%= touring_route.touring_desc %></td>            
-          </tr>
-           <tr>
-            <td><%= touring_route.start_date.strftime('%Y/%m/%d') %></td>
-          </tr>
-
+              <tr>
+                <td class="index_route_icon" colspan="2" rowspan="2">
+                   <%= link_to touring_route_path(touring_route), class: 'index_list_link' do %>
+                       <%= image_tag 'img_aso.png' ,width: 100  %>
+                   <% end %>
+                </td>
+                <td><%= image_tag 'icon_desc.svg', width:32 %></td>
+                <td><%= touring_route.touring_desc %></td>            
+              </tr>
+              <tr>
+              <td><%= image_tag 'icon_calender.svg', width:32 %></td>
+                <td><%= touring_route.start_date.strftime('%Y/%m/%d') %></td>
+              </tr>
       </tbody>
     </table>
   <% end %>
+</div>

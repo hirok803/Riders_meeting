@@ -49,7 +49,7 @@ p{
 }
 
 a:link,a:visited,a:hover,a:active{
-  color:#fff;
+  color:#888;
   font-weight: bold;
 }
 .start_btn_container a:link,.start_btn_container a:visited,.start_btn_container a:hover,.start_btn_container a:active {
@@ -170,10 +170,15 @@ nav ul i{
   background-color: rgba(255,255,255,0.6);
 
 }
-.touring_new_form,.comment_form{
+.touring_new_form{
   width:100%;
   position: fixed;
   bottom: 80px;
+}
+.touring_show_comment_form{
+  position: fixed;
+  bottom: 80px;
+  width:100%;
 }
 .touring_show_detail li{
   padding: 16px;
@@ -185,7 +190,6 @@ nav ul i{
 
 .comment_form {
   display: flex;
-  align-items: center;
 }
 .comment_form .field{
   flex-basis: 80%;
@@ -232,9 +236,12 @@ nav ul i{
 .message{
   display: none;
 }
-
 .index_body{
-  margin-bottom: 36px;
+  display: flex;
+  flex-wrap:wrap;
+}
+.index_list{
+  margin: 0 36px 36px 0 ;
 }
 
 td{
@@ -243,7 +250,11 @@ td{
   font-size:1.4rem;
 }
 .index_user_icon{
-  text-align: center; 
+  width: 40px;
+}
+
+.index_route_icon{
+  padding-left: 32px;
 }
 
 
