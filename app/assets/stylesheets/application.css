@@ -352,7 +352,14 @@ margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }
-
+  .touring_show_container{
+      flex-basis: 40%;
+  }
+    .touring_show_comment_form{
+    position: fixed;
+    bottom: 80px;
+    width:40%;
+  }
   .touring_show_detail,.touring_new_form{
     width: auto;
     position: static;

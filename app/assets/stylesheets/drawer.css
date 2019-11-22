@@ -1,4 +1,7 @@
-#comment-drawer {
+
+@media screen and (max-width: 768px){
+  
+  #comment-drawer {
   position: relative;
 }
 
@@ -76,26 +79,4 @@
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
-@media screen and (min-width: 768px){
-  #comment-drawer {
-    padding: 16px;
-    position: static;
-  }
-  
-  
-  #comment-content {
-    overflow: auto;
-    position: static;
-    z-index: 0;/*最前面に*/
-    width: auto;
-    max-width: none;/*最大幅（調整してください）*/
-    height: auto;
-    background:transparent;/*背景色*/
-    -webkit-transform: translateX(0);
-    transform: translateX(0);/*左に隠しておく*/
-  }
-
-    #comment-open span, #comment-open span:before, #comment-open span:after {
-    display: none;
-}
 }
