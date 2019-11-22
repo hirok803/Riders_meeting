@@ -40,7 +40,6 @@ body{
 
 main{
   color: #007FEB;
-  margin: 25px;
 }
 
 h1{
@@ -250,7 +249,7 @@ nav ul a:hover i{
   flex-wrap:wrap;
 }
 .index_list{
-  margin: 0 36px 36px 0 ;
+  margin: 18px;
 }
 
 td{
