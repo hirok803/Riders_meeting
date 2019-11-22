@@ -1,4 +1,3 @@
-<div class="form">
 <%= form_with(model: touring_route, local: true) do |form| %>
   <% if touring_route.errors.any? %>
     <div id="error_explanation">
@@ -11,39 +10,28 @@
       </ul>
     </div>
   <% end %>
-
+  <%= form.hidden_field :touring_name %>
+  <%= form.hidden_field :end_date %> 
   
-
-   <div class="field none">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :touring_name %>
-    <%= form.text_field :touring_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :touring_desc %>
-    <%= form.text_field :touring_desc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date, use_month_numbers: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_field :end_date %>
-  </div>
-
-
-  <ul class="latlng">
+  <ul class="touring_new_form_detail">     
     <li>
       <div class="field">
-        <div class="flex">
+        <%= image_tag 'icon_desc.svg', width:32 %>
+        <%= form.text_field :touring_desc %>
+      </div>
+    </li>
+    <li>
+      <div class="field">
+        <%= image_tag 'icon_calender.svg', width:32 %>
+        <%= form.date_select :start_date, use_month_numbers: true %>
+      </div>
+    </li>      
+  </ul>
+
+  <ul class="touring_new_form_latlng">
+    <li>
+      <div class="field">
+        <div class="touring_new_form_button">
           <%= radio_button_tag(:RadioGroup, "start",{:checked => true}) %>
           <%= label_tag(:RadioGroup_start, "出発地点") %>
         </div>
@@ -57,7 +45,7 @@
     </li>
     <li>
       <div class="field">
-        <div class="flex">
+        <div class="touring_new_form_button">
           <%= radio_button_tag(:RadioGroup, "end") %>
           <%= label_tag(:RadioGroup_end, "目的地") %>
         </div>
@@ -71,7 +59,7 @@
     </li>
     <li>
       <div class="field">
-        <div class="flex">
+        <div class="touring_new_form_button">
           <%= radio_button_tag(:RadioGroup, "wp1") %>
           <%= label_tag(:RadioGroup_wp1, "経由地1") %>
         </div>
@@ -84,7 +72,7 @@
       </li>
     <li>
       <div class="field">
-        <div class="flex">
+        <div class="touring_new_form_button">
           <%= radio_button_tag(:RadioGroup, "wp2") %>
           <%= label_tag(:RadioGroup_wp2, "経由地2") %>
         </div>
@@ -98,7 +86,7 @@
     </li>
     <li>
       <div class="field">
-        <div class="flex">
+        <div class="touring_new_form_button">
           <%= radio_button_tag(:RadioGroup, "wp3") %>
           <%= label_tag(:RadioGroup_wp3, "経由地3") %>
         </div>
@@ -111,20 +99,11 @@
       </div>
     </li>
   </ul>
-
-  <div class="field none">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at %>
-  </div>
-
-  <div class="field none">
-    <%= form.label :updated_at %>
-    <%= form.datetime_select :updated_at %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
+  <ul class="touring_new_form_submit">
+    <li>
+       <div class="actions">
+        <%= form.submit "登録"%>
+      </div>   
+    </li>
+  </ul>
 <% end %>
-</div>

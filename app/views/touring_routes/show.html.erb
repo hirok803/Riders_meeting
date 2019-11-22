@@ -1,101 +1,93 @@
-<h1>Touring Route</h1>
+<%# <h1>Touring Route</h1> %>
 <div class="touring_show">
-    <div>
-      <p>
-        <strong>User:</strong>
-        <%= @touring_route.user.name %>
-      </p>
-      <p>
-        <strong>Touring desc:</strong>
-        <%= @touring_route.touring_desc %>
-      </p>
+  <div>
+      <ul class="touring_show_detail">
+        <li class="user">
+          <%= image_tag(@touring_route.user.avatar_url, width: 32, height:32) if @touring_route.user.avatar.present? %>
+          <span><%= @touring_route.user.name %> </span>   
+        </li>
+        <li>
+          <%= image_tag 'icon_desc.svg', width:32 %>
+          <span><%= @touring_route.touring_desc %></span>
+        </li>
+        <li>
+          <%= image_tag 'icon_calender.svg', width:32 %>
+          <span><%= @touring_route.start_date.strftime('%Y/%m/%d') %></span>
+        </li>
+      </ul>
+<%# コメント入力欄をドロワーとして出し入れ %>
+      <div class="touring_show_comment" id="comment_drawer">
+        <input id="comment-input" type="checkbox" class="comment-unshown">
+        <label id="comment-open" for="comment-input"><span></span></label>
+        <label class="comment-unshown" id="comment-close" for="comment-input"></label>
+       
+        <div id="comment-content">
+        <div class="touring_show_comment_body">
+          <% @comments.each do |comment| %>
+            <% if comment.user == current_user%>
+                <!–左からの吹き出し–>
+                <div class="kaiwa">
+                    <figure class="kaiwa-img-right">
+                      <%# <img src="画像のURL" alt="no-img2″> %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if comment.user.avatar.present? %>
 
-      <p>
-        <strong>Start date:</strong>
-        <%= @touring_route.start_date.strftime('%Y/%m/%d') %>
-      </p>
+                    <figcaption class="kaiwa-img-description">
+                    <%# /////////名前//////////// %>
+                    <strong><%= comment.user.name %></strong>
 
-      <p>
-        <strong>End date:</strong>
-        <%= @touring_route.end_date %>
-      </p>
-        <div class="none">
-            <p>
-              <strong>Start lat:</strong>
-              <%= @touring_route.start_lat %>
-            </p>
+                    </figcaption>
+                    </figure>
+                    <div class="kaiwa-text-left">
+                      <p class="kaiwa-text">
+                        <%# /////////チャットの内容//////////// %>
+                        <%= comment.comment %>
+                      </p>
+                    </div>
+                </div>
 
-            <p>
-              <strong>Start lon:</strong>
-              <%= @touring_route.start_lon %>
-            </p>
+            <% else %>
+                <!–左からの吹き出し–>
+                <div class="kaiwa">
+                    <figure class="kaiwa-img-left">
+                      <%# <img src="画像のURL" alt="no-img2″> %>
+                    <%= image_tag(comment.user.avatar_url, width: 32) if comment.user.avatar.present? %>
 
-            <p>
-              <strong>End lat:</strong>
-              <%= @touring_route.end_lat %>
-            </p>
+                    <figcaption class="kaiwa-img-description">
+                    <%# /////////名前//////////// %>
+                    <strong><%= comment.user.name %></strong>
 
-            <p>
-              <strong>End lon:</strong>
-              <%= @touring_route.end_lon %>
-            </p>
-
-            <p>
-              <strong>Wp1 lat:</strong>
-              <%= @touring_route.wp1_lat %>
-            </p>
-
-            <p>
-              <strong>Wp1 lon:</strong>
-              <%= @touring_route.wp1_lon %>
-            </p>
-
-            <p>
-              <strong>Wp2 lat:</strong>
-              <%= @touring_route.wp2_lat %>
-            </p>
-
-            <p>
-              <strong>Wp2 lon:</strong>
-              <%= @touring_route.wp2_lon %>
-            </p>
-
-            <p>
-              <strong>Wp3 lat:</strong>
-              <%= @touring_route.wp3_lat %>
-            </p>
-
-            <p>
-              <strong>Wp3 lon:</strong>
-              <%= @touring_route.wp3_lon %>
-            </p>
-
-            <p>
-              <strong>Created at:</strong>
-              <%= @touring_route.created_at %>
-            </p>
-
-            <p>
-              <strong>Updated at:</strong>
-              <%= @touring_route.updated_at %>
-            </p>
+                    </figcaption>
+                    </figure>
+                    <div class="kaiwa-text-right">
+                      <p class="kaiwa-text">
+                        <%# /////////チャットの内容//////////// %>
+                        <%= comment.comment %>
+                      </p>
+                    </div>
+                </div>
+            <% end %> 
+          <% end %>
+        </div> 
+        <div class="touring_show_comment_form">
+            <% if user_signed_in? %>
+              <%= render 'comments/form' , comment: @comment %>
+            <% end %>
         </div>
-
-        <%= render 'comments/form', comment: @comment %>
-         <% @touring_route.comments.each do |comment| %>
-        <p>
-          <%= current_user.name %>
-          <%= comment.comment %>
-        </p>
-      <% end %>
+      </div>
+      <%# ドロワー出し入れ　：ここまで %>
     </div>
-    <div class="map" id="map_show" >
-    </div>
+  </div>
+  <div class="map" id="map_show" >
+  </div>
 </div>
 
+<%
+=begin%> 
 <%= link_to 'Edit', edit_touring_route_path(@touring_route) %> |
 <%= link_to 'Back', touring_routes_path %> |
 <%= link_to 'Destroy', @touring_route, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%
+=end%>
 
 <script>
 (async() => {
@@ -150,16 +142,186 @@ function initMap_d(routes) {
         center: new google.maps.LatLng(view_center_lat,view_center_lon), // マップの中心
         zoom: 9, // ズームレベル
         styles:
+        // [
+        //   {
+        //     "elementType": "geometry.fill",
+        //     "stylers": [
+        //       {
+        //         "saturation": -80
+        //       }
+        //     ]
+        //   }
+        // ]
         [
-          {
-            "elementType": "geometry.fill",
-            "stylers": [
-              {
-                "saturation": -80
-              }
-            ]
-          }
+    {
+        "featureType": "all",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "weight": "2.00"
+            }
         ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#9c9c9c"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#eeeeee"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#7b7b7b"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#c8d7d4"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#070707"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    }
+]
     });
 
     var d = new google.maps.DirectionsService(); // ルート検索オブジェクト
@@ -200,7 +362,7 @@ function initMap_d(routes) {
               map : map,             // 対象の地図オブジェクト
               position : pos,   // 緯度・経度
               icon: {
-                url: '/icon_bike.png',                      //アイコンのURL
+                url: '/icon_bike.svg',                      //アイコンのURL
                 scaledSize: new google.maps.Size(40, 40) //サイズ
                 }
             });
