@@ -34,7 +34,7 @@ body{
 }
 .home_body{
     background-image: url("/img_bg_home_SP@2x.png");
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat; 
 }
 
