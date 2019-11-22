@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
-  <body>
+  <body class="home_body">
     <% if user_signed_in? %> 
       <header>
       <p class="header_title">RidersMeeting</p>
@@ -24,17 +24,15 @@
       </header>
     <% end %>
     <main> 
-      <% if user_signed_in? %> 
         <div class="home_logo">
-            <%= image_tag("img_logo_b", width: 200)  %>
+            <%= image_tag("img_logo_w", width: 200)  %>
         </div>
+
+      <% if user_signed_in? %>
         <p class="home_message">
         <span>Welcome !</span>
         </p>
       <% else %>
-        <div class="home_logo">
-            <%= image_tag("img_logo_w", width: 200)  %>
-        </div>
           <%= yield %>
       <% end %>
 

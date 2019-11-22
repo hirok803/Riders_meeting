@@ -32,6 +32,11 @@ body{
   -moz-osx-font-smoothing: grayscale;
 
 }
+.home_body{
+    background-image: url("/img_bg_home_SP@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
 
 main{
   color: #007FEB;
@@ -100,7 +105,10 @@ nav ul {
   padding: 1em;
 }
 nav ul i{
-  color:#000;
+  color:#fff;
+}
+nav ul a:hover i{
+  color: #2699FB;
 }
 
 
@@ -113,6 +121,7 @@ nav ul i{
   margin-top: 110px;
   font-size: 3.2rem;
   font-weight: bold;
+  color:#fff;
 }
 
 .start_btn_container{
