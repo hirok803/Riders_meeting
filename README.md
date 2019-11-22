@@ -21,7 +21,4 @@ bundler-2.0.2 updated
 
 * Deployment instructions
 
-
 * ...
-このリポジトリはhirok803の継続開発になります
-

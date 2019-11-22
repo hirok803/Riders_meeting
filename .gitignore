@@ -31,3 +31,5 @@
 /config/master.key
 .mc-rails.yml
 /.env
+/routes.txt
+public/uploads/user/avatar/

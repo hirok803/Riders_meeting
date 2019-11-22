@@ -10,8 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require reset.css
  *= require_self
+ *= require_tree .
+ 
  */
  @charset "UTF-8";
 /* CSS Document */
@@ -19,8 +21,8 @@
 html{
 	font-size: 62.5%; /* 16px X 62.5% = 10PX */
 }
-body{
-	/* color:#333; */
+
+body{ 
 	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
 	font-size: 1.6rem;
 	font-feature-settings: "palt" 1;
@@ -28,29 +30,50 @@ body{
 	line-height:1.85;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   margin: 0px;
-  background-image: url("/rider.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
+
 }
+.home_body{
+    background-image: url("/img_bg_home_SP@2x.png");
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
 main{
-margin: 100px 40px 0 40px;
+  color: #007FEB;
+  margin: 25px;
 }
+
 h1{
-  font-size: 2.4rem;
+  font-size: 3.6rem;
+}
+h2{
+  font-size:2.4rem;
 }
 p{
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
-ul{
-  list-style: none;
-  padding-inline-start: 0;
+
+a:link,a:visited,a:hover,a:active{
+  color:#888;
+  font-weight: bold;
 }
+.start_btn_container a:link,.start_btn_container a:visited,.start_btn_container a:hover,.start_btn_container a:active {
+  color:#007FEB;
+}
+
 label{
   padding-right: 10px;
+  font-weight: bold;;
 }
 input{
   margin: 0 10px;
+  padding: 0;
+  appearance: none;
+  font-size: 1.6rem;
+}
+textarea{
+  appearance: none;
+  width: 100%;
 }
 .none{
   display: none;
@@ -58,47 +81,295 @@ input{
 .flex{
   display:flex;
 }
-.form{
-  box-sizing: border-box;
+
+header{
+  display: none;
 }
-.field{
-  margin-top: 1.2rem;
+footer{
+    width: 100%;
+    background-color:#007FEB;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+  }
+/* nav { */
+  /* flex: 1 1 auto; */
+  /* width: 100%; */
+  /* position: absolute; */
+  /* top:50%; */
+  /* transform: translateY(-50%); */
+/* } */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+nav ul i{
+  color:#fff;
+}
+nav ul a:hover i{
+  color: #2699FB;
 }
 
- header{
-  height: 80px;
-  width: 100%;
-  background-color:#C0C0C0;
+
+.header_title{
+  display: none;
+}
+
+.home_logo,.home_message{
+  text-align: center;
+  margin-top: 127px;
+  font-size: 3.2rem;
+  font-weight: bolder;
+  color:#fff;
+}
+
+.start_btn_container{
   position: fixed;
-  padding: 1px;
-  top: 0;
-  z-index: 99;
- }
-
-header p{
-  line-height: 80px;
-  float: left;
-  font-size: 40px;
-  font-weight: bold;
-  margin-left: 40px;
-  margin-top: 0px;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  top:380px;
+  left:50%;
+  width: 200px;
+  height: 200px;
+  transform:translateX(-50%)
+}
+.start_btn_container li{
+  text-align: center;
+  color: #007FEB;
+}
+.start_btn_container span{
+   font-weight: bold;
 }
 
-header nav{
-  float:right;
-  margin-right: 100px;
+.signup_btn a,.login_btn a{
+  display:block;
+  text-align: center;
+  line-height: 5.0rem;
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  border:1px solid #007FEB;
+  margin: 0 auto;
 }
 
-header li{
-  float: right;
-  margin-right: 40px;
-  margin-top: 10px;
-  list-style: none;
-}
 
-header li :hover{
-  background-color:rgba(192,192, 192, 1.0);
-}
-.avatar img{
+
+.user img,.index_user_icon img{
   width: 32px;
+  height: 32px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+
+.map{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -99;
+}
+
+.touring_show_detail{
+  position: fixed;
+  bottom: 72px;
+  padding: 8px;
+  background-color: rgba(255,255,255,0.6);
+
+}
+.touring_new_form{
+  width:100%;
+  position: fixed;
+  bottom: 80px;
+}
+.touring_show_comment_form{
+  position: fixed;
+  bottom: 80px;
+  width:100%;
+}
+.touring_show_detail li{
+  padding: 16px;
+}
+.touring_show_detail span{
+  padding: 8px;
+  font-weight: bold;
+}
+
+.comment_form {
+  display: flex;
+}
+.comment_form .field{
+  flex-basis: 80%;
+}
+
+.touring_new_form_detail li{
+  padding: 16px;
+  width: 250px;
+  margin: 0 auto;
+  display: block;
+}
+
+.touring_new_form_latlng li{
+  padding: 8px;
+}
+.touring_new_form_latlng{
+  display: none;
+}
+.touring_new_form input {
+  border: 1px solid #007FEB ;
+}
+
+.touring_new_form_button{
+  display: flex;
+  align-items: center;
+}
+.touring_new_form_submit{
+  padding: 16px;
+}
+.touring_new_form_submit input[type="submit"] {
+	border-style: none;
+	width: 160px;
+	height: 48px;
+  margin: 0 auto ;
+	border: 1px solid #007FEB;
+	display: block;
+	border-radius: 24px;
+  font-size: 1.8rem;
+  background-color: #007FEB;
+  color: #fff;
+  line-height: 48px;
+}
+
+.message{
+  display: none;
+}
+.index_body{
+  display: flex;
+  flex-wrap:wrap;
+}
+.index_list{
+  margin: 0 36px 36px 0 ;
+}
+
+td{
+  padding: 8px;
+  vertical-align: middle;
+  font-size:1.4rem;
+}
+.index_user_icon{
+  width: 40px;
+}
+
+.index_route_icon{
+  padding-left: 32px;
+}
+
+.root h1{
+  margin-top: 95px;
+  color:#fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+.root_start{
+margin: 0 auto;
+}
+.root_start {
+  margin-top: 300px;
+  position: static;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: #007FEB;
+
+}
+/* ********************* */
+/* *** For desktop ***** */
+/* ********************* */
+@media screen and (min-width: 768px) {
+
+  input{
+  padding: 0;
+  appearance: normal;
+  }
+  textarea{
+  appearance: normal;
+  }
+
+  a:link,a:visited,a:hover,a:active{
+  color:#007FEB;
+  font-weight: bold;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+
+  body{
+    /* background-image: url("/img_bg_home_PC.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat; 
+  } 
+  
+  main{
+  margin: 36px;
+  /* color: #fff; */
+  }
+
+  footer{
+    display: none;
+  }
+  header{
+    display: flex;
+    background-color:#007FEB;
+    justify-content: space-between;
+    height: 6rem;
+    width: 100%;
+    z-index: 99;
+  }
+
+  header p{
+    line-height: 6rem;
+    font-size: 3.6rem;
+    font-weight: bold;
+    margin-left: 40px;
+    color: white;
+  }
+
+  .header_title{
+     display: block;
+  }
+  nav {
+    width: 50%;
+    right:0 ;
+  }
+  .touring_new,.touring_show {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .touring_show_detail,.touring_new_form{
+    width: auto;
+    position: static;
+  }
+  .touring_new_form_latlng{
+  display: block;
+  margin: 32px 0 32px 0 ;
+}
+  .message{
+    display: block;
+  }
+
+  .map{ 
+    position: static;
+    width: 40%; 
+    height: 500px;
+    z-index: 0;
+  }
+
 }

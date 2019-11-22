@@ -1,6 +1,6 @@
 class TouringRoutesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :show, :edit, :update, :destroy]
-  before_action :set_touring_route, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user_touring_route, only: [:edit, :update, :destroy]
 
   # GET /touring_routes
   # GET /touring_routes.json
@@ -11,12 +11,16 @@ class TouringRoutesController < ApplicationController
   # GET /touring_routes/1
   # GET /touring_routes/1.json
   def show
-        @comment = @touring_route.comments.build
+    @touring_route = TouringRoute.includes(:user).find(params[:id])
+    @comments = @touring_route.comments.includes(:user).all
+    @comment  = @touring_route.comments.build(user_id: current_user.id) if current_user
+    
+
   end
 
   # GET /touring_routes/new
   def new
-    @touring_route = TouringRoute.new
+    @touring_route = current_user.touring_routes.build
   end
 
   # GET /touring_routes/1/edit
@@ -70,12 +74,12 @@ class TouringRoutesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_touring_route
-      @touring_route = TouringRoute.find(params[:id])
+    def set_current_user_touring_route
+      @touring_route = current_user.touring_routes.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def touring_route_params
-      params.require(:touring_route).permit(:touring_name, :touring_desc, :start_date, :end_date, :start_lat, :start_lon, :end_lat, :end_lon, :wp1_lat, :wp1_lon, :wp2_lat, :wp2_lon, :wp3_lat, :wp3_lon, :created_at, :updated_at)
+      params.require(:touring_route).permit(:touring_name, :touring_desc, :start_date, :end_date, :start_lat, :start_lon, :end_lat, :end_lon, :wp1_lat, :wp1_lon, :wp2_lat, :wp2_lon, :wp3_lat, :wp3_lon, :created_at, :updated_at, :user_id)
     end
 end
