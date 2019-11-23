@@ -18,12 +18,15 @@
  @charset "UTF-8";
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&display=swap&subset=japanese');
+
+/* 全体共通のデザイン設定　for スマートフォン */
+
 html{
 	font-size: 62.5%; /* 16px X 62.5% = 10PX */
 }
 
 body{ 
-	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
+	font-family: "Roboto","Noto Sans Jp",sans-serif;
 	font-size: 1.6rem;
 	font-feature-settings: "palt" 1;
 	letter-spacing: 0.02rem;
@@ -31,11 +34,6 @@ body{
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-}
-.home_body{
-    background-image: url("/img_bg_home_SP@2x.png");
-    background-size: 100% auto;
-    background-repeat: no-repeat; 
 }
 
 main{
@@ -52,6 +50,7 @@ p{
   font-size: 1.6rem;
 }
 
+/* リンク設定リセット */
 a:link,a:visited,a:hover,a:active{
   color:#888;
   font-weight: bold;
@@ -60,6 +59,7 @@ a:link,a:visited,a:hover,a:active{
   color:#007FEB;
 }
 
+/* フォームのリセット設定 */
 label{
   padding-right: 10px;
   font-weight: bold;;
@@ -74,6 +74,8 @@ textarea{
   appearance: none;
   width: 100%;
 }
+
+/* 共通タグ */
 .none{
   display: none;
 }
@@ -81,9 +83,16 @@ textarea{
   display:flex;
 }
 
+/* ヘッダー　フッター　ナビ */
+
 header{
   display: none;
 }
+
+.header_title{
+  display: none;
+}
+
 footer{
     width: 100%;
     background-color:#007FEB;
@@ -110,10 +119,14 @@ nav ul a:hover i{
   color: #2699FB;
 }
 
+/* ホーム　 */
 
-.header_title{
-  display: none;
+.home_body{
+    background-image: url("/img_bg_home_SP@2x.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat; 
 }
+
 
 .home_logo,.home_message{
   text-align: center;
@@ -123,6 +136,7 @@ nav ul a:hover i{
   color:#fff;
 }
 
+/* スタートボタン */
 .start_btn_container{
   position: fixed;
   display:flex;
@@ -153,7 +167,7 @@ nav ul a:hover i{
   margin: 0 auto;
 }
 
-
+/* ユーザーアイコン設定 */
 
 .user img,.index_user_icon img{
   width: 32px;
@@ -162,6 +176,7 @@ nav ul a:hover i{
   border-radius: 50%;
 }
 
+/* マップを画面全体の背面に設定 */
 .map{
   width: 100vw;
   height: 100vh;
@@ -171,6 +186,7 @@ nav ul a:hover i{
   z-index: -99;
 }
 
+/* ツーリングの詳細表示 */
 .touring_show_detail{
   position: fixed;
   bottom: 72px;
@@ -178,16 +194,7 @@ nav ul a:hover i{
   background-color: rgba(255,255,255,0.6);
 
 }
-.touring_new_form{
-  width:100%;
-  position: fixed;
-  bottom: 80px;
-}
-.touring_show_comment_form{
-  position: fixed;
-  bottom: 80px;
-  width:100%;
-}
+
 .touring_show_detail li{
   padding: 16px;
 }
@@ -196,11 +203,26 @@ nav ul a:hover i{
   font-weight: bold;
 }
 
+/* コメントフォームのボトムに設定 */
+.touring_show_comment_form{
+  position: fixed;
+  bottom: 80px;
+  width:100%;
+}
+
 .comment_form {
   display: flex;
 }
 .comment_form .field{
   flex-basis: 80%;
+}
+
+
+/* ツーリングの詳細入力フォームをボトムに設定 */
+.touring_new_form{
+  width:100%;
+  position: fixed;
+  bottom: 80px;
 }
 
 .touring_new_form_detail li{
@@ -227,6 +249,8 @@ nav ul a:hover i{
 .touring_new_form_submit{
   padding: 16px;
 }
+
+/* 登録ボタン */
 .touring_new_form_submit input[type="submit"] {
 	border-style: none;
 	width: 160px;
@@ -244,6 +268,8 @@ nav ul a:hover i{
 .message{
   display: none;
 }
+
+/* ツーリング一覧 */
 .index_body{
   display: flex;
   flex-wrap:wrap;
@@ -265,6 +291,7 @@ td{
   padding-left: 32px;
 }
 
+/* トップ画面 */
 .root h1{
   margin-top: 95px;
   color:#fff;
