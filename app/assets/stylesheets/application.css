@@ -52,11 +52,8 @@ p{
 
 /* リンク設定リセット */
 a:link,a:visited,a:hover,a:active{
-  color:#888;
-  font-weight: bold;
-}
-.start_btn_container a:link,.start_btn_container a:visited,.start_btn_container a:hover,.start_btn_container a:active {
   color:#007FEB;
+  font-weight: bold;
 }
 
 /* フォームのリセット設定 */
@@ -100,13 +97,7 @@ footer{
     bottom: 0;
     z-index: 99;
   }
-/* nav { */
-  /* flex: 1 1 auto; */
-  /* width: 100%; */
-  /* position: absolute; */
-  /* top:50%; */
-  /* transform: translateY(-50%); */
-/* } */
+
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -136,6 +127,29 @@ nav ul a:hover i{
   color:#fff;
 }
 
+
+/* トップ画面 */
+.root h1{
+  margin-top: 95px;
+  color:#fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+.root_start{
+margin: 0 auto;
+}
+.root_start {
+  margin-top: 300px;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  color: #007FEB;
+}
+
 /* スタートボタン */
 .start_btn_container{
   position: fixed;
@@ -148,11 +162,11 @@ nav ul a:hover i{
   height: 200px;
   transform:translateX(-50%)
 }
-.start_btn_container li{
+.root_start li{
   text-align: center;
   color: #007FEB;
 }
-.start_btn_container span{
+.root_start  span{
    font-weight: bold;
 }
 
@@ -291,29 +305,6 @@ td{
   padding-left: 32px;
 }
 
-/* トップ画面 */
-.root h1{
-  margin-top: 95px;
-  color:#fff;
-  text-align: center;
-  font-weight: bold;
-  font-size: 3.2rem;
-}
-.root_start{
-margin: 0 auto;
-}
-.root_start {
-  margin-top: 300px;
-  position: static;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  color: #007FEB;
-
-}
 /* ********************* */
 /* *** For desktop ***** */
 /* ********************* */
