@@ -35,9 +35,12 @@ body{
   -moz-osx-font-smoothing: grayscale;
 
 }
-
 main{
   color: #007FEB;
+}
+
+.main_view{
+  padding: 36px;
 }
 
 h1{
@@ -67,10 +70,10 @@ a:link,a:visited,a:hover,a:active{
   appearance: none;
   font-size: 1.6rem;
 } */
-/* textarea{
-  appearance: none;
+textarea{
+  /* appearance: none; */
   width: 100%;
-} */
+}
 
 /* 共通タグ */
 .none{
@@ -216,9 +219,6 @@ h3{
 /* アプリのメインビュー */
 /*********************/
 
-  .main_view{
-  padding: 36px;
-  }
 
 
 /* ユーザーアイコン設定 */
@@ -257,6 +257,9 @@ h3{
   font-weight: bold;
 }
 
+.touring_show_comment{
+  padding: 18px;
+}
 /* コメントフォームのボトムに設定 */
 .touring_show_comment_form{
   position: fixed;
@@ -266,6 +269,7 @@ h3{
 
 .comment_form {
   display: flex;
+  justify-content: space-around;
 }
 .comment_form .field{
   flex-basis: 80%;
@@ -329,7 +333,7 @@ h3{
   flex-wrap:wrap;
 }
 .index_list{
-  margin: 18px;
+  margin: 18px 0;
 }
 
 td{
@@ -372,7 +376,6 @@ td{
     background-size: cover;
     background-repeat: no-repeat; 
   } 
-  
 
   footer{
     display: none;
