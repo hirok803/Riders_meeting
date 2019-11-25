@@ -11,7 +11,14 @@
   <%= link_to 'Back', touring_routes_path %>
 </div>
 <script>
-  initMap();
+
+  $(function(){
+    setTimeout(function(){
+        //マップの初期化表示
+       initMap()
+    },100);
+});
+
     function initMap() {
 
       // マップの初期化
