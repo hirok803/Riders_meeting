@@ -127,7 +127,10 @@ nav ul a:hover i{
     background-repeat: no-repeat; 
     height: 100vh;
 }
-
+.home_first_wrapper{
+  width: 300px;
+  margin: 0 auto;
+}
 
 .home_logo,.home_message{
   text-align: center;
