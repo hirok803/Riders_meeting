@@ -21,8 +21,6 @@
    <header>
       <p class="header_title">RidersMeeting</p>
       <% if user_signed_in? %> 
-          <!-- Logged in as <strong><%= current_user.email %></strong> --> 
-          <!-- <%= link_to 'ログアウト', destroy_user_session_path,method: :delete %> -->
           <%= render 'layouts/nav' %>
       <% end %>
     </header>
