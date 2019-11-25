@@ -40,7 +40,7 @@ main{
 }
 
 .main_view{
-  padding: 36px;
+  padding: 20px;
 }
 
 h1{
@@ -288,7 +288,8 @@ h3{
 
 /* コメントフォームのボトムに設定 */
 .touring_show_comment{
-  padding-top: 16px;
+  padding: 16px;
+  margin-top: 16px;
 }
 
 .comment_form {
@@ -362,10 +363,29 @@ h3{
   display: flex;
   flex-wrap:wrap;
 }
+
 .index_list{
-  margin: 18px 0;
+  padding: 16px;
+  margin: 16px;
+  background-color:#F1F9FF ;
+}
+.index_user{
+  display: flex;
+  margin-bottom: 16px;
 }
 
+.index_user span{
+  padding-left: 16px;
+}
+.index_detail{
+  display: flex;
+}
+.insex_detail_sumb{
+  padding: 8px;
+}
+.index_detail_desc,.index_detail_cal{
+  padding: 8px 16px;
+}
 td{
   padding: 8px;
   vertical-align: middle;
@@ -373,6 +393,8 @@ td{
 }
 .index_user_icon{
   width: 40px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 .index_route_icon{
