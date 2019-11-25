@@ -23,17 +23,8 @@
         <%= render 'layouts/nav' %>  
       </header>
     <% end %>
-    <main> 
-      <div class="home_logo">
-        <%= image_tag("img_logo_b", width: 200)  %>
-      </div>
-        <% if user_signed_in? %> 
-          <p class="home_message">
-            <span>Welcome !</span>
-          </p>
-        <% else %>
+    <main class="user_view"> 
           <%= yield %>
-        <% end %>
       <div class="message">
         <!-- <p class="notice"><%= notice %></p> -->
         <p class="alert"><%= alert %></p>

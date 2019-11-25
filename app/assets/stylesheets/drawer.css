@@ -1,4 +1,10 @@
 
+#comment-open{
+  display: none;
+}
+.comment-unshown {
+  display:none;
+}
 @media screen and (max-width: 768px){
   
   #comment-drawer {
@@ -12,17 +18,18 @@
 
 /*アイコンのスペース*/
 #comment-open {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
+  font-size:2.4rem;
+  display: block;
 }
-
+#comment-open span {
+  padding: 1.6rem;
+}
 /*ハンバーガーアイコンをCSSだけで表現*/
+/* 
 #comment-open span, #comment-open span:before, #comment-open span:after {
   position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
+  height: 3px;
+  width: 25px;
   border-radius: 3px;
   background: #555;
   display: block;
@@ -34,7 +41,7 @@
 }
 #comment-open span:after {
   bottom: -16px;
-}
+} */
 
 /*閉じる用の薄黒カバー*/
 #comment-close {
