@@ -271,7 +271,7 @@ h3{
   display: flex;
   justify-content: space-around;
 }
-.comment_form .field{
+.comment_form_textarea{
   flex-basis: 80%;
 }
 
