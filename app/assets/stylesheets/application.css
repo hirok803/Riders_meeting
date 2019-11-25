@@ -202,13 +202,14 @@ h3{
 }
 
 .concept img{
+  display: block;
   width: 100%;
-  margin: 35px 0;
+  margin: 0 auto;
 }
 
 .usage img{
   display: block;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   text-align: center;
   border: 2px solid #007FEB;
@@ -349,9 +350,9 @@ td{
   padding-left: 32px;
 }
 
-/* ********************* */
-/* *** For desktop ***** */
-/* ********************* */
+/* ****************************** */
+/* ******** For desktop ********* */
+/* ****************************** */
 @media screen and (min-width: 768px) {
 /* 
   input{
@@ -404,6 +405,35 @@ td{
     width: 50%;
     right:0 ;
   }
+
+/*********************/
+/*      ホーム画面     */
+/*********************/
+
+/* コンセプト　＆　使い方 */
+  .under_view_area{
+    margin: 0 15%;
+  }
+  .under_view_area p{
+    margin: 80px 0;
+  }
+
+  h2{
+    font-size: 6.0rem;
+  }
+
+  .usage{
+    display: flex;
+    justify-content: space-around;
+  }
+  .usage li{
+    width: 20%;
+  }
+/*********************/
+/* アプリのメインビュー */
+/*********************/
+
+
   .touring_new,.touring_show {
     display: flex;
     justify-content: space-between;
