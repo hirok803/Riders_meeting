@@ -104,7 +104,8 @@ footer{
 nav ul {
   display: flex;
   justify-content: space-around;
-  padding: 1em;
+  padding: 8px;
+  font-size: 2.4rem;
 }
 nav ul i{
   color:#fff;
