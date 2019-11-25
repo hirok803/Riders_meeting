@@ -74,6 +74,9 @@ textarea{
   /* appearance: none; */
   width: 100%;
 }
+label{
+  display: none;
+}
 
 /* 共通タグ */
 .none{
