@@ -262,13 +262,16 @@ h3{
   padding: 18px;
 }
 /* コメントフォームのボトムに設定 */
-.touring_show_comment_form{
+/* .touring_show_comment_form{
   position: fixed;
   bottom: 80px;
   width:100%;
-}
+} */
 
 .comment_form {
+  position: fixed;
+  bottom: 80px;
+  width:90%;
   display: flex;
   justify-content: space-around;
 }
