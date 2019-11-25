@@ -281,6 +281,7 @@ h3{
   width:100%;
   position: fixed;
   bottom: 80px;
+  left:0;
 }
 
 .touring_new_form_detail li{
