@@ -317,7 +317,9 @@ h3{
   margin: 0 auto;
   display: block;
 }
-
+.touring_new_form_detail li img{
+  margin-right: 16px;
+}
 .touring_new_form_latlng li{
   padding: 8px;
 }
