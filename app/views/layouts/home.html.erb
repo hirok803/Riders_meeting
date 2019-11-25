@@ -24,6 +24,7 @@
       </header>
     <% end %>
     <main> 
+    <div class="home_first_page">
         <div class="home_logo">
             <%= image_tag("img_logo_w.svg", width: 200)  %>
         </div>
@@ -33,13 +34,30 @@
         <span>Welcome !</span>
         </p>
       <% else %>
-          <%= yield %>
-      <% end %>
+      <h1 class="home_concept_copy">はしろう<br>そこからはじまる<br>出会いと発見</h1>
 
+        <ul class="root_start"> 
+          <li class="signup_btn">
+              <%= link_to 'サインアップ', new_user_registration_path %> 
+          </li>
+          <li>
+          <span>OR</span>
+          </li>
+          <li class="login_btn" >
+              <%= link_to 'ログイン', new_user_session_path %>          
+          </li>
+        </ul>
+      <% end %>
       <div class="message">
         <!-- <p class="notice"><%= notice %></p> -->
         <p class="alert"><%= alert %></p>
       </div>
+    </div>
+      <% if user_signed_in? %>
+      <% else %>
+        <%# コンセプト　＆　使い方 %>
+          <%= yield %>
+      <% end %>
     </main>
 
     <% if user_signed_in? %> 
