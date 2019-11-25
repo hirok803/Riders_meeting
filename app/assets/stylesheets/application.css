@@ -18,12 +18,15 @@
  @charset "UTF-8";
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&display=swap&subset=japanese');
+
+/* 全体共通のデザイン設定　for スマートフォン */
+
 html{
 	font-size: 62.5%; /* 16px X 62.5% = 10PX */
 }
 
 body{ 
-	/* font-family: "Roboto","Noto Sans Jp",sans-serif; */
+	font-family: "Roboto","Noto Sans Jp",sans-serif;
 	font-size: 1.6rem;
 	font-feature-settings: "palt" 1;
 	letter-spacing: 0.02rem;
@@ -32,15 +35,12 @@ body{
   -moz-osx-font-smoothing: grayscale;
 
 }
-.home_body{
-    background-image: url("/img_bg_home_SP@2x.png");
-    background-size: 100% auto;
-    background-repeat: no-repeat; 
-}
-
 main{
   color: #007FEB;
-  margin: 25px;
+}
+
+.main_view{
+  padding: 36px;
 }
 
 h1{
@@ -53,28 +53,29 @@ p{
   font-size: 1.6rem;
 }
 
+/* リンク設定リセット */
 a:link,a:visited,a:hover,a:active{
-  color:#888;
+  color:#007FEB;
   font-weight: bold;
 }
-.start_btn_container a:link,.start_btn_container a:visited,.start_btn_container a:hover,.start_btn_container a:active {
-  color:#007FEB;
-}
 
-label{
+/* フォームのリセット設定 */
+/* label{
   padding-right: 10px;
   font-weight: bold;;
-}
-input{
+} */
+/* input{
   margin: 0 10px;
   padding: 0;
   appearance: none;
   font-size: 1.6rem;
-}
+} */
 textarea{
-  appearance: none;
+  /* appearance: none; */
   width: 100%;
 }
+
+/* 共通タグ */
 .none{
   display: none;
 }
@@ -82,9 +83,16 @@ textarea{
   display:flex;
 }
 
+/* ヘッダー　フッター　ナビ */
+
 header{
   display: none;
 }
+
+.header_title{
+  display: none;
+}
+
 footer{
     width: 100%;
     background-color:#007FEB;
@@ -92,13 +100,7 @@ footer{
     bottom: 0;
     z-index: 99;
   }
-/* nav { */
-  /* flex: 1 1 auto; */
-  /* width: 100%; */
-  /* position: absolute; */
-  /* top:50%; */
-  /* transform: translateY(-50%); */
-/* } */
+
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -111,50 +113,115 @@ nav ul a:hover i{
   color: #2699FB;
 }
 
+/*********************/
+/*      ホーム画面     */
+/*********************/
 
-.header_title{
-  display: none;
+.home_first_page{
+    background-image: url("/img_bg_home_SP@2x.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat; 
+    height: 100vh;
 }
+
 
 .home_logo,.home_message{
   text-align: center;
-  margin-top: 127px;
+  padding-top: 127px;
   font-size: 3.2rem;
   font-weight: bolder;
   color:#fff;
 }
 
-.start_btn_container{
-  position: fixed;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-  top:380px;
-  left:50%;
-  width: 200px;
-  height: 200px;
-  transform:translateX(-50%)
+
+/* トップ画面 */
+.home_concept_copy{
+  margin-top: 50px;
+  color:#fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.2rem;
+  line-height: 5.0rem;
 }
-.start_btn_container li{
+
+/* スタートボタン */
+.root_start {
+  margin-top: 300px;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+  width: 280px;
+  margin: 0 auto;
+  height: 100px;
   text-align: center;
   color: #007FEB;
 }
-.start_btn_container span{
+
+.root_start li{
+  text-align: center;
+  color: #007FEB;
+  font-size: 1.2rem;
+}
+.root_start  span{
    font-weight: bold;
+   color: #fff;
+   font-size: 1.6rem;
 }
 
 .signup_btn a,.login_btn a{
   display:block;
   text-align: center;
-  line-height: 5.0rem;
-  width: 150px;
-  height: 50px;
+  line-height: 40px;
+  width: 100px;
+  height: 40px;
   background-color: #fff;
   border:1px solid #007FEB;
   margin: 0 auto;
 }
 
+/* コンセプト　＆　使い方 */
+.under_view_area{
+  margin: 0 35px;
+}
 
+.under_view_area p{
+  margin: 35px 0;
+  color: #000;
+}
+
+h2{
+  font-size: 4.0rem;
+  margin: 48px 0;
+  text-align: center;
+}
+
+h3{
+  font-size: 2.4rem;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.concept img{
+  width: 100%;
+  margin: 35px 0;
+}
+
+.usage img{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #007FEB;
+  border-radius: 16px;
+}
+
+/*********************/
+/* アプリのメインビュー */
+/*********************/
+
+
+
+/* ユーザーアイコン設定 */
 
 .user img,.index_user_icon img{
   width: 32px;
@@ -163,6 +230,7 @@ nav ul a:hover i{
   border-radius: 50%;
 }
 
+/* マップを画面全体の背面に設定 */
 .map{
   width: 100vw;
   height: 100vh;
@@ -172,6 +240,7 @@ nav ul a:hover i{
   z-index: -99;
 }
 
+/* ツーリングの詳細表示 */
 .touring_show_detail{
   position: fixed;
   bottom: 72px;
@@ -179,16 +248,7 @@ nav ul a:hover i{
   background-color: rgba(255,255,255,0.6);
 
 }
-.touring_new_form{
-  width:100%;
-  position: fixed;
-  bottom: 80px;
-}
-.touring_show_comment_form{
-  position: fixed;
-  bottom: 80px;
-  width:100%;
-}
+
 .touring_show_detail li{
   padding: 16px;
 }
@@ -197,11 +257,30 @@ nav ul a:hover i{
   font-weight: bold;
 }
 
+.touring_show_comment{
+  padding: 18px;
+}
+/* コメントフォームのボトムに設定 */
+.touring_show_comment_form{
+  position: fixed;
+  bottom: 80px;
+  width:100%;
+}
+
 .comment_form {
   display: flex;
+  justify-content: space-around;
 }
 .comment_form .field{
   flex-basis: 80%;
+}
+
+
+/* ツーリングの詳細入力フォームをボトムに設定 */
+.touring_new_form{
+  width:100%;
+  position: fixed;
+  bottom: 80px;
 }
 
 .touring_new_form_detail li{
@@ -228,6 +307,8 @@ nav ul a:hover i{
 .touring_new_form_submit{
   padding: 16px;
 }
+
+/* 登録ボタン */
 .touring_new_form_submit input[type="submit"] {
 	border-style: none;
 	width: 160px;
@@ -245,12 +326,14 @@ nav ul a:hover i{
 .message{
   display: none;
 }
+
+/* ツーリング一覧 */
 .index_body{
   display: flex;
   flex-wrap:wrap;
 }
 .index_list{
-  margin: 0 36px 36px 0 ;
+  margin: 18px 0;
 }
 
 td{
@@ -266,45 +349,23 @@ td{
   padding-left: 32px;
 }
 
-.root h1{
-  margin-top: 95px;
-  color:#fff;
-  text-align: center;
-  font-weight: bold;
-  font-size: 3.2rem;
-}
-.root_start{
-margin: 0 auto;
-}
-.root_start {
-  margin-top: 300px;
-  position: static;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  color: #007FEB;
-
-}
 /* ********************* */
 /* *** For desktop ***** */
 /* ********************* */
 @media screen and (min-width: 768px) {
-
+/* 
   input{
   padding: 0;
   appearance: normal;
-  }
-  textarea{
+  } */
+  /* textarea{
   appearance: normal;
-  }
+  } */
 
-  a:link,a:visited,a:hover,a:active{
+  /* a:link,a:visited,a:hover,a:active{
   color:#007FEB;
   font-weight: bold;
-  }
+  } */
 
   h2{
     font-weight: bold;
@@ -315,11 +376,6 @@ margin: 0 auto;
     background-size: cover;
     background-repeat: no-repeat; 
   } 
-  
-  main{
-  margin: 36px;
-  /* color: #fff; */
-  }
 
   footer{
     display: none;
@@ -352,7 +408,14 @@ margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }
-
+  .touring_show_container{
+      flex-basis: 40%;
+  }
+    .touring_show_comment_form{
+    position: fixed;
+    bottom: 80px;
+    width:40%;
+  }
   .touring_show_detail,.touring_new_form{
     width: auto;
     position: static;

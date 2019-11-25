@@ -1,6 +1,6 @@
 <%# <h1>Touring Route</h1> %>
 <div class="touring_show">
-  <div>
+  <div class="touring_show_container">
       <ul class="touring_show_detail">
         <li class="user">
           <%= image_tag(@touring_route.user.avatar_url, width: 32, height:32) if @touring_route.user.avatar.present? %>
@@ -15,7 +15,7 @@
           <span><%= @touring_route.start_date.strftime('%Y/%m/%d') %></span>
         </li>
       </ul>
-<%# コメント入力欄をドロワーとして出し入れ %>
+      <%# コメント入力欄をドロワーとして出し入れ %>
       <div class="touring_show_comment" id="comment_drawer">
         <input id="comment-input" type="checkbox" class="comment-unshown">
         <label id="comment-open" for="comment-input"><span></span></label>
@@ -90,20 +90,29 @@
 =end%>
 
 <script>
-(async() => {
+
+// (async() => {
+//   // json を読み込む
+//   const res = await axios.get('/touring_routes/<%= @touring_route.id %>.json').catch(() => {
+//     console.error('データの取得に失敗')
+//     return null
+//   })
+
+//   //マップの初期化表示
+//   initMap_d(res)
+// })()
+
+(() => {
   // json を読み込む
-  const res = await axios.get('/touring_routes/<%= @touring_route.id %>.json').catch(() => {
-    console.error('データの取得に失敗')
-    return null
-  })
-
-  $(function(){
-    setTimeout(function(){
-        //マップの初期化表示
-       initMap_d(res)
-    },50);
-});
-
+  axios.get('/touring_routes/<%= @touring_route.id %>.json')
+    .then((res) => {
+      //マップの初期化表示
+      initMap_d(res)
+    })
+    .catch(() => {
+      console.error('データの取得に失敗')
+      return null
+    })
 })()
 
 function initMap_d(routes) {
