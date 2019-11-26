@@ -58,14 +58,14 @@ a:link,a:visited{
   color:#007FEB;
   font-weight: bold;
 }
-.home_first_page a:link,.home_first_page a:visited{
+.shared_links a:link,.shared_links a:visited{
   color:#fff;
 }
 a:hover,a:active{
   color:#BCE0FD;
   font-weight: bold;
 }
-.home_first_page a:hover,.home_first_page a:active{
+.shared_links a:hover,.shared_links a:active{
   color:#2699FB;
 }
 
