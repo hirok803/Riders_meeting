@@ -55,11 +55,11 @@ p{
 
 /* リンク設定リセット */
 a:link,a:visited{
-  color:#fff;
+  color:#007FEB;
   font-weight: bold;
 }
 a:hover,a:active{
-  color:#2699FB;
+  color:#BCE0FD;
   font-weight: bold;
 }
 
@@ -436,7 +436,9 @@ h3{
   h2{
     font-weight: bold;
   }
-
+  label{
+    display: block;
+  }
   body{
     /* background-image: url("/img_bg_home_PC.jpg"); */
     background-size: cover;
