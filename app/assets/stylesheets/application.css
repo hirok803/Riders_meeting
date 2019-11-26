@@ -54,11 +54,14 @@ p{
 }
 
 /* リンク設定リセット */
-a:link,a:visited,a:hover,a:active{
-  color:#007FEB;
+a:link,a:visited{
+  color:#fff;
   font-weight: bold;
 }
-
+a:hover,a:active{
+  color:#2699FB;
+  font-weight: bold;
+}
 /* フォームのリセット設定 */
 /* label{
   padding-right: 10px;
@@ -255,12 +258,14 @@ h3{
   line-height: 120px;
 }
 /* ユーザログイン */
-.remember_me,.login_shared_links{
+.remember_me{
   margin: 16px 0;
   color: #fff;
   font-weight: bold;
 }
-
+.login_shared_links{
+  margin: 32px 0;
+}
 /*********************/
 /* アプリのメインビュー */
 /*********************/
@@ -354,7 +359,7 @@ h3{
 }
 
 /* 登録ボタン */
-.actions input[type="submit"] {
+.actions:not(.comment_submit) input[type="submit"] {
 	border-style: none;
 	width: 160px;
   height: 48px;
