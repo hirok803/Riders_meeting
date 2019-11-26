@@ -55,24 +55,14 @@ p{
 
 /* リンク設定リセット */
 a:link,a:visited{
-  color:#fff;
+  color:#007FEB;
   font-weight: bold;
 }
 a:hover,a:active{
-  color:#2699FB;
+  color:#BCE0FD;
   font-weight: bold;
 }
-/* フォームのリセット設定 */
-/* label{
-  padding-right: 10px;
-  font-weight: bold;;
-} */
-/* input{
-  margin: 0 10px;
-  padding: 0;
-  appearance: none;
-  font-size: 1.6rem;
-} */
+
 textarea,input[type="email"],input[type="password"],input[type="text"]{
   /* appearance: none; */
   width: 100%;
@@ -238,7 +228,7 @@ h3{
 /*********************/
 
 .user_view{
-  width: 300px;
+  width: 248px;
   margin: 0 auto;
 }
 
@@ -308,7 +298,12 @@ h3{
   font-weight: bold;
 }
 
-/* コメントフォームのボトムに設定 */
+/* コメント一覧 */
+.touring_show_comment_body{
+  overflow: scroll;
+  height: 80vh;
+}
+/* コメントフォーム*/
 .touring_show_comment{
   padding: 16px;
   margin-top: 16px;
@@ -316,7 +311,7 @@ h3{
 
 .comment_form {
   position: fixed;
-  bottom: 80px;
+  bottom: 48px;
   width:90%;
   display: flex;
   justify-content: space-around;
@@ -391,8 +386,15 @@ h3{
 .index_body{
   display: flex;
   flex-wrap:wrap;
+  justify-content: center;
 }
-
+.index_list a:link,.index_list a:visited,.index_list a:hover,.index_list a:active{
+  color:#007FEB;
+  font-weight: bold;
+}
+.index_list:hover,.index_list:active{
+  background-color: #BCE0FD;
+}
 .index_list{
   padding: 16px;
   margin: 16px;
@@ -415,11 +417,7 @@ h3{
 .index_detail_desc,.index_detail_cal{
   padding: 8px 16px;
 }
-td{
-  padding: 8px;
-  vertical-align: middle;
-  font-size:1.4rem;
-}
+
 .index_user_icon{
   width: 40px;
   height: 40px;
@@ -434,24 +432,13 @@ td{
 /* ******** For desktop ********* */
 /* ****************************** */
 @media screen and (min-width: 768px) {
-/* 
-  input{
-  padding: 0;
-  appearance: normal;
-  } */
-  /* textarea{
-  appearance: normal;
-  } */
-
-  /* a:link,a:visited,a:hover,a:active{
-  color:#007FEB;
-  font-weight: bold;
-  } */
 
   h2{
     font-weight: bold;
   }
-
+  label{
+    display: block;
+  }
   body{
     /* background-image: url("/img_bg_home_PC.jpg"); */
     background-size: cover;
@@ -521,6 +508,10 @@ td{
   .touring_show_container{
       flex-basis: 40%;
   }
+  .touring_show_comment_body{
+  overflow: scroll;
+  height: 40vh;
+}
   .comment_form {
     width:40%;
   }
