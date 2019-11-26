@@ -70,17 +70,24 @@ a:link,a:visited,a:hover,a:active{
   appearance: none;
   font-size: 1.6rem;
 } */
-textarea{
+textarea,input[type="email"],input[type="password"],input[type="text"]{
   /* appearance: none; */
   width: 100%;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
 }
+
 label{
   display: none;
+  font-size: 1.6rem;
 }
 
 /* 共通タグ */
 .none{
   display: none;
+}
+.inline-block{
+  display: inline-block;
 }
 .flex{
   display:flex;
@@ -128,7 +135,7 @@ nav ul a:hover i{
     height: 100vh;
 }
 .home_first_wrapper{
-  width: 300px;
+  width: 248px;
   margin: 0 auto;
 }
 
@@ -247,8 +254,12 @@ h3{
   font-size: 6.0rem;
   line-height: 120px;
 }
-
-
+/* ユーザログイン */
+.remember_me,.login_shared_links{
+  margin: 16px 0;
+  color: #fff;
+  font-weight: bold;
+}
 
 /*********************/
 /* アプリのメインビュー */
@@ -341,21 +352,19 @@ h3{
   display: flex;
   align-items: center;
 }
-.touring_new_form_submit{
-  padding: 16px;
-}
 
 /* 登録ボタン */
-.touring_new_form_submit input[type="submit"] {
+.actions input[type="submit"] {
 	border-style: none;
 	width: 160px;
-	height: 48px;
-  margin: 0 auto ;
-	border: 1px solid #007FEB;
+  height: 48px;
+  margin: 16px auto ;
+	border: 1px solid #2699FB;
 	display: block;
 	border-radius: 24px;
   font-size: 1.8rem;
-  background-color: #007FEB;
+  font-weight: bold;
+  background-color: #2699FB;
   color: #fff;
   line-height: 48px;
 }
