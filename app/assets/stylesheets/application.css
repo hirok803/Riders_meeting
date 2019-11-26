@@ -298,7 +298,12 @@ h3{
   font-weight: bold;
 }
 
-/* コメントフォームのボトムに設定 */
+/* コメント一覧 */
+.touring_show_comment_body{
+  overflow: scroll;
+  height: 80vh;
+}
+/* コメントフォーム*/
 .touring_show_comment{
   padding: 16px;
   margin-top: 16px;
@@ -306,7 +311,7 @@ h3{
 
 .comment_form {
   position: fixed;
-  bottom: 80px;
+  bottom: 48px;
   width:90%;
   display: flex;
   justify-content: space-around;
@@ -501,6 +506,10 @@ h3{
   .touring_show_container{
       flex-basis: 40%;
   }
+  .touring_show_comment_body{
+  overflow: scroll;
+  height: 40vh;
+}
   .comment_form {
     width:40%;
   }
