@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>RidersMeetingApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body class="home_body">
+    <% if user_signed_in? %> 
+      <header>
+      <p class="header_title">RidersMeeting</p>
+        <%= render 'layouts/nav' %>  
+      </header>
+    <% end %>
+    <main> 
+      <div class="home_first_page">
+        <div class="home_first_wrapper">
+          <div class="home_logo">
+              <%= image_tag("img_logo_w.svg", width: 200)  %>
+          </div>
+
+          <% if user_signed_in? %>
+            <p class="home_message">
+            <span>Welcome !</span>
+            </p>
+          <% else %>
+          
+          <% end %>
+          <div class="message">
+            <!-- <p class="notice"><%= notice %></p> -->
+            <p class="alert"><%= alert %></p>
+          </div>
+
+          <% if user_signed_in? %>
+          <% else %>
+              <%= yield %>
+          <% end %>
+        </div>
+      </div>
+    </main>
+
+    <% if user_signed_in? %> 
+    <footer>   
+      <%= render 'layouts/nav' %>  
+    </footer>
+    <% end %>
+
+  </body>
+</html>
