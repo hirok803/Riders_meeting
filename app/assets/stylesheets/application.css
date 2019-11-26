@@ -40,7 +40,7 @@ main{
 }
 
 .main_view{
-  padding: 36px;
+  padding: 20px;
 }
 
 h1{
@@ -54,11 +54,14 @@ p{
 }
 
 /* リンク設定リセット */
-a:link,a:visited,a:hover,a:active{
-  color:#007FEB;
+a:link,a:visited{
+  color:#fff;
   font-weight: bold;
 }
-
+a:hover,a:active{
+  color:#2699FB;
+  font-weight: bold;
+}
 /* フォームのリセット設定 */
 /* label{
   padding-right: 10px;
@@ -70,14 +73,24 @@ a:link,a:visited,a:hover,a:active{
   appearance: none;
   font-size: 1.6rem;
 } */
-textarea{
+textarea,input[type="email"],input[type="password"],input[type="text"]{
   /* appearance: none; */
   width: 100%;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+}
+
+label{
+  display: none;
+  font-size: 1.6rem;
 }
 
 /* 共通タグ */
 .none{
   display: none;
+}
+.inline-block{
+  display: inline-block;
 }
 .flex{
   display:flex;
@@ -124,7 +137,10 @@ nav ul a:hover i{
     background-repeat: no-repeat; 
     height: 100vh;
 }
-
+.home_first_wrapper{
+  width: 248px;
+  margin: 0 auto;
+}
 
 .home_logo,.home_message{
   text-align: center;
@@ -241,9 +257,15 @@ h3{
   font-size: 6.0rem;
   line-height: 120px;
 }
-
-
-
+/* ユーザログイン */
+.remember_me{
+  margin: 16px 0;
+  color: #fff;
+  font-weight: bold;
+}
+.login_shared_links{
+  margin: 32px 0;
+}
 /*********************/
 /* アプリのメインビュー */
 /*********************/
@@ -288,7 +310,8 @@ h3{
 
 /* コメントフォームのボトムに設定 */
 .touring_show_comment{
-  padding-top: 16px;
+  padding: 16px;
+  margin-top: 16px;
 }
 
 .comment_form {
@@ -300,6 +323,15 @@ h3{
 }
 .comment_form_textarea{
   flex-basis: 80%;
+}
+.commment_btn{
+  background-color: #fff;
+  border: none;
+}
+.commment_btn i{
+  font-size: 4.0rem;
+  color: #007FEB;
+  vertical-align: middle;
 }
 
 
@@ -317,7 +349,9 @@ h3{
   margin: 0 auto;
   display: block;
 }
-
+.touring_new_form_detail li img{
+  margin-right: 16px;
+}
 .touring_new_form_latlng li{
   padding: 8px;
 }
@@ -332,21 +366,19 @@ h3{
   display: flex;
   align-items: center;
 }
-.touring_new_form_submit{
-  padding: 16px;
-}
 
 /* 登録ボタン */
-.touring_new_form_submit input[type="submit"] {
+.actions input[type="submit"] {
 	border-style: none;
 	width: 160px;
-	height: 48px;
-  margin: 0 auto ;
-	border: 1px solid #007FEB;
+  height: 48px;
+  margin: 16px auto ;
+	border: 1px solid #2699FB;
 	display: block;
 	border-radius: 24px;
   font-size: 1.8rem;
-  background-color: #007FEB;
+  font-weight: bold;
+  background-color: #2699FB;
   color: #fff;
   line-height: 48px;
 }
@@ -360,10 +392,29 @@ h3{
   display: flex;
   flex-wrap:wrap;
 }
+
 .index_list{
-  margin: 18px 0;
+  padding: 16px;
+  margin: 16px;
+  background-color:#F1F9FF ;
+}
+.index_user{
+  display: flex;
+  margin-bottom: 16px;
 }
 
+.index_user span{
+  padding-left: 16px;
+}
+.index_detail{
+  display: flex;
+}
+.insex_detail_sumb{
+  padding: 8px;
+}
+.index_detail_desc,.index_detail_cal{
+  padding: 8px 16px;
+}
 td{
   padding: 8px;
   vertical-align: middle;
@@ -371,6 +422,8 @@ td{
 }
 .index_user_icon{
   width: 40px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 .index_route_icon{
