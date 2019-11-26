@@ -58,16 +58,24 @@ a:link,a:visited{
   color:#007FEB;
   font-weight: bold;
 }
+.home_first_page a:link,.home_first_page a:visited{
+  color:#fff;
+}
 a:hover,a:active{
   color:#BCE0FD;
   font-weight: bold;
 }
+.home_first_page a:hover,.home_first_page a:active{
+  color:#2699FB;
+}
 
-textarea,input[type="email"],input[type="password"],input[type="text"]{
+input[type="email"],input[type="password"],input[type="text"] {
   /* appearance: none; */
-  width: 100%;
   font-size: 1.6rem;
   line-height: 3.2rem;
+  box-sizing: border-box;
+  border: 2px solid #007FEB;
+  width: 100%;
 }
 
 label{
@@ -128,7 +136,7 @@ nav ul a:hover i{
     height: 100vh;
 }
 .home_first_wrapper{
-  width: 248px;
+  width: 280px;
   margin: 0 auto;
 }
 
@@ -165,7 +173,6 @@ nav ul a:hover i{
 }
 
 .root_start li{
-  text-align: center;
   color: #007FEB;
   font-size: 1.2rem;
 }
@@ -311,14 +318,21 @@ h3{
 
 .comment_form {
   position: fixed;
-  bottom: 48px;
+  bottom: 80px;
   width:90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .comment_form_textarea{
-  flex-basis: 80%;
+  flex-basis: 75%;
 }
+.comment_form_textarea textarea{
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  border: 2px solid #007FEB;
+}
+
 .commment_btn{
   background-color: #fff;
   border: none;
@@ -513,7 +527,7 @@ h3{
   height: 40vh;
 }
   .comment_form {
-    width:40%;
+    width:35%;
   }
   .touring_show_detail,.touring_new_form{
     width: auto;
