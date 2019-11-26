@@ -62,17 +62,7 @@ a:hover,a:active{
   color:#2699FB;
   font-weight: bold;
 }
-/* フォームのリセット設定 */
-/* label{
-  padding-right: 10px;
-  font-weight: bold;;
-} */
-/* input{
-  margin: 0 10px;
-  padding: 0;
-  appearance: none;
-  font-size: 1.6rem;
-} */
+
 textarea,input[type="email"],input[type="password"],input[type="text"]{
   /* appearance: none; */
   width: 100%;
@@ -238,7 +228,7 @@ h3{
 /*********************/
 
 .user_view{
-  width: 300px;
+  width: 248px;
   margin: 0 auto;
 }
 
@@ -391,8 +381,15 @@ h3{
 .index_body{
   display: flex;
   flex-wrap:wrap;
+  justify-content: center;
 }
-
+.index_list a:link,.index_list a:visited,.index_list a:hover,.index_list a:active{
+  color:#007FEB;
+  font-weight: bold;
+}
+.index_list:hover,.index_list:active{
+  background-color: #BCE0FD;
+}
 .index_list{
   padding: 16px;
   margin: 16px;
@@ -415,11 +412,7 @@ h3{
 .index_detail_desc,.index_detail_cal{
   padding: 8px 16px;
 }
-td{
-  padding: 8px;
-  vertical-align: middle;
-  font-size:1.4rem;
-}
+
 .index_user_icon{
   width: 40px;
   height: 40px;
@@ -434,19 +427,6 @@ td{
 /* ******** For desktop ********* */
 /* ****************************** */
 @media screen and (min-width: 768px) {
-/* 
-  input{
-  padding: 0;
-  appearance: normal;
-  } */
-  /* textarea{
-  appearance: normal;
-  } */
-
-  /* a:link,a:visited,a:hover,a:active{
-  color:#007FEB;
-  font-weight: bold;
-  } */
 
   h2{
     font-weight: bold;
