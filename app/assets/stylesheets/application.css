@@ -324,6 +324,15 @@ h3{
 .comment_form_textarea{
   flex-basis: 80%;
 }
+.commment_btn{
+  background-color: #fff;
+  border: none;
+}
+.commment_btn i{
+  font-size: 4.0rem;
+  color: #007FEB;
+  vertical-align: middle;
+}
 
 
 /* ツーリングの詳細入力フォームをボトムに設定 */
@@ -359,7 +368,7 @@ h3{
 }
 
 /* 登録ボタン */
-.actions:not(.comment_submit) input[type="submit"] {
+.actions input[type="submit"] {
 	border-style: none;
 	width: 160px;
   height: 48px;

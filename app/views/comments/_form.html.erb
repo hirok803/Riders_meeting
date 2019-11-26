@@ -13,9 +13,9 @@
     <div class="field comment_form_textarea">
       <%= form.text_area :comment, placeholder:"コメントを入力" %>
     </div>
-    <div class="actions comment_submit">
-      <%= form.submit ">"%>
-    </div>
+    <button class="commment_btn" type="submit" name="commit">
+      <i class="fas fa-caret-square-right"></i>
+    </button>
   </div>
     <%= form.hidden_field :user_id %>
     <%= form.hidden_field :touring_route_id %>
