@@ -374,7 +374,7 @@ h3{
 .touring_new_form_latlng{
   display: none;
 }
-.touring_new_form input {
+.touring_new_form_detail_desc input {
   border: 1px solid #007FEB ;
 }
 
