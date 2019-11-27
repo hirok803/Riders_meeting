@@ -416,12 +416,16 @@ h3{
   margin: 16px;
   background-color:#F1F9FF ;
 }
+.index_list_destroy{
+  text-align: right;
+  width: 60%;
+}
 .index_user{
   display: flex;
   margin-bottom: 16px;
 }
 
-.index_user span{
+.index_user_name{
   padding-left: 16px;
 }
 .index_detail{

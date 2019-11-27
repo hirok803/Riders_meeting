@@ -2,13 +2,22 @@
 <div class="index_body">
   <% @touring_routes.each do |touring_route| %>
     <div class="index_list">
-        <%= link_to touring_route_path(touring_route), class: 'index_list_link' do %>
         <div class="index_user">
           <div class="index_user_icon">
               <%= image_tag(touring_route.user.avatar_url, width: 40 ) if touring_route.user.avatar.present? %>
           </div>
-          <span><%= touring_route.user.name %></span>    
+          <div class="index_user_name">
+            <span><%= touring_route.user.name %></span>
+          </div>
+          <div class="index_list_destroy">
+            <%= link_to  touring_route, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <% if touring_route.user == current_user %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+           <% end %>   
+          </div>
         </div>
+        <%= link_to touring_route_path(touring_route), class: 'index_list_link' do %>
         <div class="index_detail">
             <div class="insex_detail_sumb">
               <%= image_tag 'img_aso.png' ,width: 100  %>
