@@ -77,7 +77,9 @@ input[type="email"],input[type="password"],input[type="text"] {
   border: 2px solid #007FEB;
   width: 100%;
 }
-
+.touring_new_form_detail input{
+  width: auto;
+}
 label{
   display: none;
   font-size: 1.6rem;
@@ -536,7 +538,17 @@ h3{
   .touring_new_form_latlng{
   display: block;
   margin: 32px 0 32px 0 ;
-}
+  }
+  .touring_new_form_latlng label{
+    display: block;
+    padding-left: 16px;
+  }
+  .index_body{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+
   .message{
     display: block;
   }
