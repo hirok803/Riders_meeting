@@ -20,7 +20,11 @@
         <%= link_to touring_route_path(touring_route), class: 'index_list_link' do %>
         <div class="index_detail">
             <div class="insex_detail_sumb">
-              <%= image_tag 'img_aso.png' ,width: 100  %>
+            <% if touring_route.picture.present? %>
+              <%= image_tag(touring_route.picture_url,width: 100 ) %>
+            <% else %>
+              <%= image_tag 'img_none.png' ,width: 100  %>
+            <% end %>
             </div>
             <div class="index_detail_desc_cal">
               <div class="index_detail_desc">
