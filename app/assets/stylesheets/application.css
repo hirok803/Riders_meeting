@@ -162,6 +162,7 @@ nav ul a:hover i{
   font-weight: bold;
   font-size: 3.2rem;
   line-height: 5.0rem;
+  /* text-shadow: 1px 1px 2px #000; */
 }
 
 /* スタートボタン */
