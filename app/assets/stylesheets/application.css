@@ -81,7 +81,7 @@ input[type="email"],input[type="password"],input[type="text"] {
   width: 100%;
 }
 .touring_new_form_detail input{
-  width: auto;
+  width: 62%;
 }
 label{
   display: none;
@@ -147,7 +147,7 @@ nav ul a:hover i{
 
 .home_logo,.home_message{
   text-align: center;
-  padding-top: 127px;
+  padding-top: 177px;
   font-size: 3.2rem;
   font-weight: bold;
   color:#fff;
@@ -162,7 +162,7 @@ nav ul a:hover i{
   font-weight: bold;
   font-size: 3.2rem;
   line-height: 5.0rem;
-  /* text-shadow: 1px 1px 2px #000; */
+  text-shadow: 1px 1px 2px #000;
 }
 
 /* スタートボタン */
@@ -217,7 +217,9 @@ nav ul a:hover i{
   line-height: 5.2rem;
   font-family: 'PT Serif', serif;
 }
-
+.usage li{
+  margin-bottom: 72px;
+}
 .usage_title{
   display: flex;
   font-size: 2.4rem;
