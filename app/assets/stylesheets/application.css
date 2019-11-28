@@ -321,6 +321,7 @@ nav ul a:hover i{
   width: 80%;
   text-align: center;
   margin: 0 auto;
+  font-weight: bold;
 }
 .page_title_fixed{
   position: fixed;
@@ -353,7 +354,6 @@ nav ul a:hover i{
 /* コメントフォーム*/
 .touring_show_comment{
   padding: 16px;
-  margin-top: 16px;
 }
 
 .comment_form {
@@ -568,6 +568,7 @@ nav ul a:hover i{
   .page_title_container h2{
   margin: 0 ;
   text-align: left;
+  font-weight: bold;
 }
 
   .touring_new,.touring_show {
