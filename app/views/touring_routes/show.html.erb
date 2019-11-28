@@ -1,4 +1,7 @@
-<%# <h1>Touring Route</h1> %>
+<div class="page_title_container">
+  <%# <i class="fas fa-arrow-left"></i> %>
+   <h2>ルート表示</h2>
+</div>
 <div class="touring_show">
   <div class="touring_show_container">
       <ul class="touring_show_detail">
@@ -152,6 +155,7 @@ function initMap_d(routes) {
     var map = new google.maps.Map(document.getElementById("map_show"), {
         center: new google.maps.LatLng(view_center_lat,view_center_lon), // マップの中心
         zoom: 9, // ズームレベル
+        disableDefaultUI: true ,
         styles:
         // [
         //   {

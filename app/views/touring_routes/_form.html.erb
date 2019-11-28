@@ -13,9 +13,15 @@
   <%= form.hidden_field :touring_name %>
   <%= form.hidden_field :end_date %> 
   
-  <ul class="touring_new_form_detail">     
+  <ul class="touring_new_form_detail">
     <li>
       <div class="field">
+        <%= form.label :picture %>
+        <%= form.file_field :picture %>
+      </div>     
+    </li> 
+    <li>
+      <div class="field touring_new_form_desc">
         <%= image_tag 'icon_desc.svg', width:32 %>
         <%= form.text_field :touring_desc, placeholder:"目的地" %>
       </div>
@@ -102,7 +108,7 @@
   <ul class="touring_new_form_submit">
     <li>
        <div class="actions">
-        <%= form.submit "登録"%>
+        <%= form.submit "登　録"%>
       </div>   
     </li>
   </ul>

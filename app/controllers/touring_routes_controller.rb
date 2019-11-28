@@ -80,6 +80,6 @@ class TouringRoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def touring_route_params
-      params.require(:touring_route).permit(:touring_name, :touring_desc, :start_date, :end_date, :start_lat, :start_lon, :end_lat, :end_lon, :wp1_lat, :wp1_lon, :wp2_lat, :wp2_lon, :wp3_lat, :wp3_lon, :created_at, :updated_at, :user_id)
+      params.require(:touring_route).permit(:touring_name, :touring_desc, :start_date, :end_date, :start_lat, :start_lon, :end_lat, :end_lon, :wp1_lat, :wp1_lon, :wp2_lat, :wp2_lon, :wp3_lat, :wp3_lon, :created_at, :updated_at, :user_id, :picture)
     end
 end
