@@ -29,26 +29,39 @@
     <h2>How to use</h2>
     <ul class="usage">
       <li>
-        <h3>ルート登録</h3>
+      <div class="usage_title">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3>ルート登録</h3>     
+      </div>    
         <%= image_tag 'img_screen_entry.png' %>
-        <p>まず、これから走るルートと目的地を登録しましょう。ルート登録はマップ上でポイントをタップするだけです。出発地>目的地>経由地3点までをタップしましょう。
-        <br>走ったあとは記念の写真もアップロードしましょう</p>
+        <p>まず、これから走るルートと目的地を登録しましょう。ルート登録はマップ上でポイントをタップするだけです。<br>
+        出発地>目的地>経由地3点までをタップしましょう。
+        走ったあとは記念の写真もアップロードしましょう</p>
       </li>
       <li>
-        <h3>ルート表示</h3>
-        <%= image_tag 'img_screen_detail.png' %>
-        <p>登録が完了すると、目的地までのルートコースを自動で表示します。</p>    
+        <div class="usage_title">
+          <i class="fas fa-list-ul"></i>
+          <h3>ルート一覧</h3>
+        </div> 
+          <%= image_tag 'img_screen_list.png' %>
+          <p>他のライダーが登録しているルートを検索してみましょう。いっしょに走りたいライダーがきっと見つかるでしょう。</p>
+      </li>
+            <li> 
+        <div class="usage_title">
+          <i class="fas fa-map"></i>
+          <h3>ルート表示</h3>
+        </div> 
+          <%= image_tag 'img_screen_detail.png' %>
+          <p>目的地までのルートコースを自動で表示します。また。マップ上には走行中のライダーの位置が表示され、今、どこを走っているかを見ることができます。<br>
+          左上のコメントアイコンをタップしてコメントを残しましょう。</p>    
       </li>
       <li>
-        <h3>ルート一覧</h3>
-        <%= image_tag 'img_screen_list.png' %>
-        <p>他のライダーが登録しているルートを検索してみましょう。いっしょに走りたいライダーがきっと見つかるでしょう。</p>
-      </li>
-      <li>
-        <h3>コメント</h3>
-        <%= image_tag 'img_screen_comment.png' %>
-
-        <p>　他のライダーのルートにコメントを残すことができます。一緒に走ろうなどのコミュニケーションをとりましょう。</p>
+        <div class="usage_title">
+          <i class="fas fa-comment-dots"></i>
+          <h3>コメント</h3>
+        </div> 
+          <%= image_tag 'img_screen_comment.png' %>
+          <p>　SNSのようにコメントを入れて「一緒に走ろう」などのコミュニケーションを楽しみましょう。</p>
       </li>
     </ul>
   </div>
