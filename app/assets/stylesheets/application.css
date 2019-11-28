@@ -80,7 +80,7 @@ input[type="email"],input[type="password"],input[type="text"] {
   border: 2px solid #007FEB;
   width: 100%;
 }
-.touring_new_form_detail input{
+.touring_new_form_detail input[type="text"]{
   width: 62%;
 }
 label{
@@ -147,7 +147,7 @@ nav ul a:hover i{
 
 .home_logo,.home_message{
   text-align: center;
-  padding-top: 177px;
+  padding-top: 100px;
   font-size: 3.2rem;
   font-weight: bold;
   color:#fff;
