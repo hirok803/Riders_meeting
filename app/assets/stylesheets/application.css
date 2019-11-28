@@ -258,6 +258,7 @@ nav ul a:hover i{
 
 .user_view h2{
   font-size: 2.4rem;
+  font-weight: bold;
   text-align: center;
   margin: 48px 0 ;
 }
@@ -457,7 +458,7 @@ nav ul a:hover i{
 }
 .index_list_destroy{
   text-align: right;
-  width: 60%;
+  width: 50%;
 }
 .index_user{
   display: flex;
@@ -466,6 +467,7 @@ nav ul a:hover i{
 
 .index_user_name{
   padding-left: 16px;
+  flex-basis: 30%;
 }
 .index_detail{
   display: flex;
@@ -569,8 +571,10 @@ nav ul a:hover i{
   margin: 0 ;
   text-align: left;
   font-weight: bold;
-}
-
+  }
+  .page_title_fixed{
+    left: 35px;
+  }
   .touring_new,.touring_show {
     display: flex;
     justify-content: space-between;
