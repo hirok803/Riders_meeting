@@ -27,7 +27,9 @@
       <div class="home_first_page">
         <div class="home_first_wrapper">
           <div class="home_logo">
-              <%= image_tag("img_logo_w@2x.png", width: 200)  %>
+              <%= link_to home_root_path do %>
+                <%= image_tag("img_logo_w@2x.png", width: 200)  %>
+              <% end %>
           </div>
 
           <% if user_signed_in? %>

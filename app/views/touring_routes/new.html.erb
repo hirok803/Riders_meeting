@@ -1,6 +1,9 @@
-<%# <h1>New Touring Route</h1> %>
-
+<div class="page_title_container">
+  <%# <i class="fas fa-arrow-left"></i> %>
+   <h2>ルート登録</h2>
+</div>
 <div class="touring_new">
+
   <div class="touring_new_form">
     <%= render 'form', touring_route: @touring_route %>
   </div>
@@ -24,6 +27,7 @@
       // マップの初期化
         var map = new google.maps.Map(document.getElementById('map_new'), {
           zoom: 9,
+          disableDefaultUI: true ,
           center: {lat: 33.31478181566308, lng: 130.50810970427096},
           styles:
                   // [

@@ -208,7 +208,7 @@ nav ul a:hover i{
   color: #000;
 }
 
-.concept h2{
+.under_view_area h2{
   font-size: 4.0rem;
   margin: 48px 0;
   text-align: center;
@@ -248,6 +248,8 @@ h3{
 
 .user_view h2{
   font-size: 2.4rem;
+  text-align: center;
+  margin: 48px 0 ;
 }
 
 .user_avatar_icon{
@@ -295,6 +297,23 @@ h3{
   z-index: -99;
 }
 
+/* ページタイトル */
+.page_title_container{
+  display: flex;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  width: 100%;
+  margin-top: 16px;
+}
+.page_title_container h2{
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+/* .page_title{
+  width: 100%;
+  margin: 0 auto;
+} */
 /* ツーリングの詳細表示 */
 .touring_show_detail{
   position: fixed;
@@ -351,7 +370,7 @@ h3{
 }
 
 
-/* ツーリングの詳細入力フォームをボトムに設定 */
+/* ツーリングのルート登録 */
 .touring_new_form{
   width:100%;
   position: fixed;
@@ -458,9 +477,6 @@ h3{
 /* **************************************************** */
 @media screen and (min-width: 768px) {
 
-  h2{
-    font-weight: bold;
-  }
   label:not(.home_first_page label){
     display: block;
   }
@@ -506,12 +522,11 @@ h3{
   .under_view_area{
     margin: 0 15%;
   }
+  .under_view_area h2{
+  font-size: 5.0rem;
+}
   .under_view_area p{
     margin: 80px 0;
-  }
-
-  h2{
-    font-size: 6.0rem;
   }
 
   .usage{
