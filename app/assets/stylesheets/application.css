@@ -442,7 +442,7 @@ nav ul a:hover i{
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
-  margin-top: 72px;
+  margin-top: 40px;
 }
 .index_list a:link,.index_list a:visited,.index_list a:hover,.index_list a:active{
   color:#007FEB;
