@@ -16,7 +16,9 @@
         <li>
             <div class="insex_detail_sumb">
             <% if @touring_route.picture.present? %>
-              <%= image_tag(@touring_route.picture_url,width: 100 ) %>
+                <%= link_to @touring_route.picture_url do %>
+                   <%= image_tag(@touring_route.picture_url,width: 100 ) %>
+                <% end %>
             <% else %>
               <%= image_tag 'img_none.png' ,width: 100  %>
             <% end %>
@@ -90,6 +92,9 @@
         </div>
       </div>
       <%# ドロワー出し入れ　：ここまで %>
+      <% if @touring_route.user == current_user %>
+        <%= link_to 'Edit', edit_touring_route_path(@touring_route),class: "edit_link" %>
+      <% end %>
     </div>
   </div>
   <div class="map" id="map_show" >

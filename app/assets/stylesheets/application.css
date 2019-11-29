@@ -346,7 +346,9 @@ nav ul a:hover i{
   padding: 8px;
   font-weight: bold;
 }
-
+  .edit_link{
+    display: none;
+  }
 /* コメント一覧 */
 .touring_show_comment_body{
   overflow: scroll;
@@ -612,6 +614,9 @@ nav ul a:hover i{
 
   .message{
     display: block;
+  }
+  .edit_link{
+    display: inline;
   }
 
   .map{ 

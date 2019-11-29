@@ -14,8 +14,8 @@
             <span><%= touring_route.user.name %></span>
           </div>
           <div class="index_list_destroy">
-            <%= link_to  touring_route, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <% if touring_route.user == current_user %>
+            <% if touring_route.user == current_user %>
+              <%= link_to  touring_route, method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="far fa-trash-alt"></i>
               <% end %>
            <% end %>   
