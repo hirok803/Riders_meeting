@@ -32,4 +32,7 @@
 .mc-rails.yml
 /.env
 /routes.txt
-/public/uploads/
+/public/uploads
+/public/uploads/touring_route
+/public/uploads/user
+/public/uploads/tmp
