@@ -316,7 +316,7 @@ nav ul a:hover i{
   font-size: 2.4rem;
   line-height: 2.4rem;
   width: 100%;
-  padding: 24px 0;
+  padding: 12px 0;
 }
 .page_title_container h2{
   width: 80%;
@@ -340,7 +340,7 @@ nav ul a:hover i{
 }
 
 .touring_show_detail li{
-  padding: 16px;
+  padding: 6px;
 }
 .touring_show_detail span{
   padding: 8px;
@@ -354,12 +354,12 @@ nav ul a:hover i{
 }
 /* コメントフォーム*/
 .touring_show_comment{
-  padding: 16px;
+  padding: 6px;
 }
 
 .comment_form {
   position: fixed;
-  bottom: 80px;
+  bottom: 60px;
   width:90%;
   display: flex;
   justify-content: space-between;
@@ -589,6 +589,9 @@ nav ul a:hover i{
   .comment_form {
     width:35%;
   }
+  .touring_show_comment{
+  padding: 16px;
+}
   .touring_show_detail,.touring_new_form{
     width: auto;
     position: static;
