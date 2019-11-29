@@ -253,7 +253,7 @@ nav ul a:hover i{
 
 .user_view{
   width: 248px;
-  margin: 0 auto;
+  margin: 24px auto;
 }
 
 .user_view h2{
@@ -263,7 +263,7 @@ nav ul a:hover i{
   margin: 48px 0 ;
 }
 .user_new{
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .user_avatar_icon{
@@ -317,6 +317,7 @@ nav ul a:hover i{
   line-height: 2.4rem;
   width: 100%;
   padding: 12px 0;
+  display: flex;
 }
 .page_title_container h2{
   width: 80%;
@@ -569,7 +570,7 @@ nav ul a:hover i{
 /*********************/
 /* アプリのメインビュー */
 /*********************/
-  .page_title_container h2{
+  .main_view .page_title_container h2{
   margin: 0 ;
   text-align: left;
   font-weight: bold;
