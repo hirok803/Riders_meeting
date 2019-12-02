@@ -21,4 +21,4 @@ bundler-2.0.2 updated
 
 * Deployment instructions
 
-* ...
+* .../
