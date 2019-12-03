@@ -8,6 +8,7 @@
     <div class="index_list">
         <div class="index_user">
           <div class="index_user_icon">
+          <%= touring_route.user.avatar.present? %>
               <%= image_tag(touring_route.user.avatar_url, width: 40 ) if touring_route.user.avatar.present? %>
           </div>
           <div class="index_user_name">
@@ -24,6 +25,7 @@
         <%= link_to touring_route_path(touring_route), class: 'index_list_link' do %>
         <div class="index_detail">
             <div class="insex_detail_sumb">
+            <%= touring_route.picture.present? %>
             <% if touring_route.picture.present? %>
               <%= image_tag(touring_route.picture_url,width: 100 ) %>
             <% else %>
