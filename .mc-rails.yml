@@ -1,6 +1,6 @@
 ---
-git: git version 2.21.0 (Apple Git-122)
+git: git version 2.21.0 (Apple Git-122.2)
 ruby: ruby 2.6.3p62 (2019-04-16 revision 67580) [x86_64-darwin18]
 rails: Rails 5.2.3
-ssh: ssh -p 38236 sweet-saga-0376@ssh-1.mc.lolipop.jp
+ssh: ssh -p 40084 sweet-saga-0376@ssh-1.mc.lolipop.jp
 nodejs: "-"
