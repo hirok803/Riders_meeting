@@ -622,7 +622,6 @@ nav ul a:hover i{
 
   .map{ 
     position: static;
-    width: 40%; 
     height: 500px;
     z-index: 0;
   }
