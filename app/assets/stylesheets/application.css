@@ -598,6 +598,7 @@ nav ul a:hover i{
   .touring_show_detail,.touring_new_form{
     width: auto;
     position: static;
+    margin: 0 auto;
   }
   .touring_new_form_latlng{
   display: block;
@@ -622,9 +623,9 @@ nav ul a:hover i{
 
   .map{ 
     position: static;
-    width: 40%; 
     height: 500px;
     z-index: 0;
+    flex-basis: 60%;
   }
 
 }

@@ -5,8 +5,16 @@ class TouringRoutesController < ApplicationController
   # GET /touring_routes
   # GET /touring_routes.json
   def index
-    @touring_routes = TouringRoute.all
+    today = Date.today
+    @touring_routes = TouringRoute.where('start_date >= ?' , today)
+    # @touring_routes = TouringRoute.all
   end
+
+  def archives
+    today = Date.today
+    @touring_routes = TouringRoute.where('start_date < ?' , today)
+  end
+
 
   # GET /touring_routes/1
   # GET /touring_routes/1.json
